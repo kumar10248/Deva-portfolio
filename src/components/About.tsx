@@ -71,40 +71,21 @@ export default function About() {
 
       <div className="max-w-4xl">
         <Paragraph className=" mt-4">
-        I am a technology enthusiast, developer, and entrepreneur with
-         a passion for solving complex problems through software and 
-         blockchain innovation. With experience in full-stack development,
-          smart contracts, and cloud infrastructure, I continuously strive 
-          to build scalable and efficient applications. My work spans across various
-           domains, including fintech, automation, and decentralized applications.
+        I am a passionate software developer and entrepreneur with a deep interest in blockchain, backend development, and scalable applications. My journey began with an eagerness to understand how technology works, leading me to master programming languages like Java, Python, and JavaScript. Over time, I expanded my expertise in algorithms, data structures, and automation, working with tools like Selenium and solving complex computational problems.
         </Paragraph>
         <Paragraph className=" mt-4">
-          Since the early days of my journey, I&apos;ve been captivated by the
-          art of crafting exceptional digital experiences. As a developer, I
-          thrive on turning lines of code into functional and elegant solutions.
-          My goal is to not just create software, but to build digital marvels
-          that seamlessly merge form and function.
+        As I explored new frontiers, blockchain technology captivated me with its potential for decentralization and security. I delved into smart contract development using Solidity, deploying contracts on Ethereum and working on projects like DegenToken ERC20 and Degen Gaming. Additionally, I gained experience with Avalanche Subnets and HyperSDK, further enhancing my understanding of blockchain infrastructure and scalability.
         </Paragraph>
 
         <Paragraph className=" mt-4">
-          But my journey doesn&apos;t stop at coding. With a heart full of words
-          and a mind brimming with ideas, I&apos;ve ventured into the realm of
-          writing. From tech articles that unravel complex concepts to creative
-          tales that ignite the imagination, I weave words to inform, entertain,
-          and inspire.
+        Beyond development, I have worked extensively with Docker, containerization, and cloud-based databases like MongoDB Atlas. Managing backend systems and troubleshooting complex deployment issues have strengthened my problem-solving abilities. These experiences have also helped me build robust and scalable applications that seamlessly integrate with modern technologies.
         </Paragraph>
         <Paragraph className=" mt-4">
-          What sets me apart is my unwavering appreciation for design. I believe
-          that aesthetics and usability go hand in hand. My eye for awesome
-          design ensures that every project I undertake not only works
-          flawlessly under the hood but also looks stunning on the surface.
+        Entrepreneurship has been an integral part of my journey. Along with Raushan Kumar, I co-founded a technology startup, where I combine my technical expertise with strategic thinking to drive innovation. This experience has pushed me beyond coding, into business development, product design, and leadership.
         </Paragraph>
         <Paragraph className=" mt-4">
-          Through this website, I aim to share my insights, experiences, and
-          creations with you. Whether you&apos;re a fellow developer seeking
-          solutions, a fellow writer in search of inspiration, or simply someone
-          who appreciates the finer aspects of design, there&apos;s something
-          here for you.
+        I thrive on challenges, constantly learning and adapting to new technologies. Whether it's debugging intricate code, optimizing blockchain applications, or architecting scalable systems, I am committed to building solutions that make an impact. Looking ahead, I am eager to explore AI-driven applications, decentralized systems, and cutting-edge innovations that shape the future.
+
         </Paragraph>
         <Paragraph className=" mt-4">
           Join me on this journey of bytes and narratives, logic and creativity,
