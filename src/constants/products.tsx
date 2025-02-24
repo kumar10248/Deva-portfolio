@@ -10,28 +10,18 @@ export const products = [
     href: "https://cloakshare.devashish.top",
     title: "cloakshare",
     description:
-      "A design and development studio that focuses on building quality apps.",
+      "A secure and temporary clipboard for anonymous text and file sharing with auto-deletion.",
     thumbnail: cloakshare,
     images: [cloakshare,cloakshare],
-    stack: ["Reactjs", "Tailwindcss"],
+    stack: ["React.js", "Tailwind CSS", "Node.js"," MongoDB"],
     slug: "aceternity",
     content: (
       <div>
         <p>
-          Sit eiusmod ex mollit sit quis ad deserunt. Sint aliqua aliqua ullamco
-          dolore nulla amet tempor sunt est ipsum. Dolor laborum eiusmod
-          cupidatat consectetur velit ipsum. Deserunt nisi in culpa laboris
-          cupidatat elit velit aute mollit nisi. Officia ad exercitation laboris
-          non cupidatat duis esse velit ut culpa et.{" "}
+        CloakShare is a secure and temporary clipboard application designed for quick and anonymous text or file sharing. Users can save text or upload files, generating a unique code that allows them to retrieve their data before automatic deletion. The platform prioritizes privacy by ensuring no personal information or registration is required.{" "}
         </p>
         <p>
-          Exercitation pariatur enim occaecat adipisicing nostrud adipisicing
-          Lorem tempor ullamco exercitation quis et dolor sint. Adipisicing sunt
-          sit aute fugiat incididunt nostrud consequat proident fugiat id.
-          Officia aliquip laborum labore eu culpa dolor reprehenderit eu ex enim
-          reprehenderit. Cillum Lorem veniam eu magna exercitation.
-          Reprehenderit adipisicing minim et officia enim et veniam Lorem
-          excepteur velit adipisicing et Lorem magna.
+        With its auto-deletion feature, CloakShare is ideal for users who need to share sensitive information without long-term storage. It provides a seamless way to transfer data between devices while maintaining security and convenience.
         </p>{" "}
       </div>
     ),
@@ -40,28 +30,18 @@ export const products = [
     href: "https://trunkller.com",
     title: "Trunkller",
     description:
-      "Practice for technical interviews with hands on coding challenges.",
+      "An AI-powered platform to optimize UI/UX design with real-time intelligent suggestions and automation.",
     thumbnail: trunkller,
     images: [trunkller, trunkller],
-    stack: ["Nextjs", "Nodejs"],
+    stack: ["TypeScript", "Tailwind CSS", "AI/ML APIs"],
     slug: "algochurn",
     content: (
       <div>
         <p>
-          Sit eiusmod ex mollit sit quis ad deserunt. Sint aliqua aliqua ullamco
-          dolore nulla amet tempor sunt est ipsum. Dolor laborum eiusmod
-          cupidatat consectetur velit ipsum. Deserunt nisi in culpa laboris
-          cupidatat elit velit aute mollit nisi. Officia ad exercitation laboris
-          non cupidatat duis esse velit ut culpa et.{" "}
+        Trunkller is an AI-powered platform designed to streamline and enhance the UI/UX design process. By integrating artificial intelligence, it provides real-time design suggestions, layout optimizations, and automated workflows, making it easier for designers and developers to create visually appealing and user-friendly interfaces. The platform helps eliminate repetitive tasks and enhances efficiency by offering intelligent recommendations based on industry best practices. Whether you're a beginner or an experienced designer, Trunkller provides tools that adapt to your workflow, ensuring a smooth and creative design experience.{" "}
         </p>
         <p>
-          Exercitation pariatur enim occaecat adipisicing nostrud adipisicing
-          Lorem tempor ullamco exercitation quis et dolor sint. Adipisicing sunt
-          sit aute fugiat incididunt nostrud consequat proident fugiat id.
-          Officia aliquip laborum labore eu culpa dolor reprehenderit eu ex enim
-          reprehenderit. Cillum Lorem veniam eu magna exercitation.
-          Reprehenderit adipisicing minim et officia enim et veniam Lorem
-          excepteur velit adipisicing et Lorem magna.
+        With a focus on usability and accessibility, Trunkller enables teams to collaborate effectively while maintaining consistency across different projects. The AI-powered design assistant simplifies prototyping, wireframing, and component structuring, reducing the time required for revisions. The platform also integrates seamlessly with various design and development tools, allowing users to export their work effortlessly. Trunkller’s goal is to bridge the gap between creativity and technology, empowering designers to bring their ideas to life with greater precision and speed.
         </p>{" "}
       </div>
     ),
@@ -70,28 +50,18 @@ export const products = [
     href: "https://cse.devashish.top",
     title: "Attendance System",
     description:
-      "Never write from scratch again with Moonbeam, your AI first writing tool",
+      " A digital attendance tracking solution for educational institutions and workplaces with real-time record management.",
     thumbnail: attendance,
     images: [attendance, attendance],
-    stack: ["Reactjs", "Javascript"],
+    stack: ["React.js", "Node.js", "Express.js"," MongoDB"],
     slug: "moonbeam",
     content: (
       <div>
         <p>
-          Sit eiusmod ex mollit sit quis ad deserunt. Sint aliqua aliqua ullamco
-          dolore nulla amet tempor sunt est ipsum. Dolor laborum eiusmod
-          cupidatat consectetur velit ipsum. Deserunt nisi in culpa laboris
-          cupidatat elit velit aute mollit nisi. Officia ad exercitation laboris
-          non cupidatat duis esse velit ut culpa et.{" "}
+        The Attendance System is a web-based application designed to modernize and automate attendance tracking in educational institutions and workplaces. By providing a digital solution, it eliminates the need for traditional manual record-keeping and ensures accuracy in tracking student or employee attendance. The system allows teachers or administrators to add student details, mark attendance as present or absent, and manage records in real time. With a secure authentication mechanism, only authorized personnel can access and update attendance data, enhancing security and reliability.{" "}
         </p>
         <p>
-          Exercitation pariatur enim occaecat adipisicing nostrud adipisicing
-          Lorem tempor ullamco exercitation quis et dolor sint. Adipisicing sunt
-          sit aute fugiat incididunt nostrud consequat proident fugiat id.
-          Officia aliquip laborum labore eu culpa dolor reprehenderit eu ex enim
-          reprehenderit. Cillum Lorem veniam eu magna exercitation.
-          Reprehenderit adipisicing minim et officia enim et veniam Lorem
-          excepteur velit adipisicing et Lorem magna.
+        This system is built with a simple and intuitive user interface, making it easy to navigate for educators and administrators. It generates organized attendance reports, helping institutions analyze attendance trends and improve accountability. By integrating technologies such as HTML, CSS, JavaScript, and backend support, the Attendance System provides an efficient and scalable solution for managing attendance data. Its automation reduces administrative workload, minimizes errors, and improves the overall efficiency of attendance tracking.
         </p>{" "}
       </div>
     ),
@@ -100,28 +70,18 @@ export const products = [
     href: "https://plotbot.devashish.top",
     title: "Plotbot",
     description:
-      "A beautiful and comprehensive Tailwind CSS components library for building modern websites and applications.",
+      "An AI-driven scriptwriting assistant that generates movie scripts, plot ideas, and character dialogues effortlessly.",
     thumbnail: plotbot,
     images: [plotbot, plotbot],
-    stack: ["Reactjs", "javascript"],
+    stack: ["React.js", "Javascript","GEMINI API"],
     slug: "tailwindmasterkit",
     content: (
       <div>
         <p>
-          Sit eiusmod ex mollit sit quis ad deserunt. Sint aliqua aliqua ullamco
-          dolore nulla amet tempor sunt est ipsum. Dolor laborum eiusmod
-          cupidatat consectetur velit ipsum. Deserunt nisi in culpa laboris
-          cupidatat elit velit aute mollit nisi. Officia ad exercitation laboris
-          non cupidatat duis esse velit ut culpa et.{" "}
+        Plotbot is an AI-powered tool that generates movie scripts, plot ideas, and character dialogues using natural language processing (NLP) and machine learning. It assists writers by providing structured scene suggestions, helping them brainstorm ideas and develop engaging storylines.{" "}
         </p>
         <p>
-          Exercitation pariatur enim occaecat adipisicing nostrud adipisicing
-          Lorem tempor ullamco exercitation quis et dolor sint. Adipisicing sunt
-          sit aute fugiat incididunt nostrud consequat proident fugiat id.
-          Officia aliquip laborum labore eu culpa dolor reprehenderit eu ex enim
-          reprehenderit. Cillum Lorem veniam eu magna exercitation.
-          Reprehenderit adipisicing minim et officia enim et veniam Lorem
-          excepteur velit adipisicing et Lorem magna.
+        With genre customization and character development assistance, Plotbot caters to filmmakers, screenwriters, and content creators. It accelerates scriptwriting by offering detailed backstories, motivations, and dialogues, making it an invaluable tool for creative professionals looking to bring their stories to life.
         </p>{" "}
       </div>
     ),
