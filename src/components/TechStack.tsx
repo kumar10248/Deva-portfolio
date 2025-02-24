@@ -60,12 +60,7 @@ src: "/images/logos/kubernetes.png",
 
 className: "h-10 w-24",
   },
-  {
-title: "Express",
-src: "/images/logos/express.png",
-
-className: "h-10 w-24",
-  },
+ 
   
  
   ];
