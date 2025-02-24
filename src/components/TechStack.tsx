@@ -19,13 +19,13 @@ export const TechStack = () => {
     },
     {
       title: "Figma",
-      src: "/images/logos/figma.png",
+      src: "/images/logos/library.png",
 
       className: "h-10 w-8",
     },
     {
       title: "Framer Motion",
-      src: "/images/logos/framer.webp",
+      src: "/images/logos/docker.png",
 
       className: "h-10 w-10",
     },
