@@ -6,44 +6,45 @@ export const metadata: Metadata = {
   description: 'Professional resume of Kumar Devashish - Blockchain & Full-Stack Developer',
 }
 
+
 const CONTACT_INFO = {
   email: "kumardevashish000@gmail.com",
-  phone: "+91-8986416949",
-  linkedin: "https://linkedin.com/in/kumar-devashishh",
+  phone: "+91 8986416949",
+  linkedin: "https://www.linkedin.com/in/kumar-devashish",
   github: "https://github.com/kumar10248"
-} as const
+} as const;
 
 const PROJECTS = [
   {
-    name: "Degen Gaming",
-    url: "https://github.com/kumar10248/DegenGaming",
-    description: "A blockchain-based gaming ecosystem with NFT integration."
+    name: "Trunkller - AI UI Component Generator",
+    url: "#",
+    description: "Developed AI-powered platform generating customizable React UI components. Scaled application to support 1,500+ active users and process 50,000+ records monthly. Integrated Razorpay payment system for premium feature monetization. Implemented comprehensive user authentication and authorization systems."
   },
   {
-    name: "Avalanche Subnet",
-    url: "https://github.com/kumar10248/Avalanche-Subnet",
-    description: "Custom Avalanche blockchain subnet for scalable dApps."
+    name: "CloakShare - Temporary File and Text Storage",
+    url: "#",
+    description: "Architected anonymous file-sharing platform with Google Drive API integration. Scaled system to handle 1,000+ files monthly, reducing server response time by 25%. Developed robust authentication and encryption protocols for data security. Containerized application with Docker for consistent deployment."
   },
   {
-    name: "Online CloakShare",
-    url: "https://github.com/kumar10248/OnlineCloakShare",
-    description: "Secure clipboard application with temporary storage and auto-delete features."
-  },
-  {
-    name: "Degen Token",
-    url: "https://github.com/kumar10248/DegenTokenERC20",
-    description: "Custom ERC-20 token with staking and governance features."
+    name: "Blockchain-Based Fundraising Campaign",
+    url: "#",
+    description: "Developed secure Ethereum smart contracts for transparent fundraising. Built responsive React.js dashboard for real-time fund tracking and analytics. Optimized Solidity code resulting in 30% transaction cost reduction. Implemented cryptographic techniques to enhance security."
   }
-] as const
+] as const;
+
+
 
 export default function ResumePage() {
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
+      {/* Header */}
       <header className="text-center mb-8">
         <h1 className="text-4xl font-bold mb-2">Kumar Devashish</h1>
-        <p className="text-gray-600 mb-2">Technology Startup Founder | Blockchain & Full-Stack Developer</p>
+        <p className="text-gray-600 mb-2">Full-stack Software Engineer with expertise in blockchain and cloud technologies, seeking to build scalable applications and contribute to innovative projects.</p>
         <div className="text-gray-500 space-x-2">
           <span>{CONTACT_INFO.email}</span>
+          <span>|</span>
+          <span>{CONTACT_INFO.phone}</span>
           <span>|</span>
           <Link href={CONTACT_INFO.linkedin} className="text-blue-600 hover:text-blue-800" target="_blank" rel="noopener noreferrer">
             LinkedIn
@@ -55,33 +56,19 @@ export default function ResumePage() {
         </div>
       </header>
 
-      <section className="mb-8" aria-labelledby="experience-heading">
-        <h2 id="experience-heading" className="text-2xl font-semibold border-b-2 pb-2 mb-4">Experience</h2>
-        <div className="space-y-6">
-          <div>
-            <h3 className="text-lg font-semibold">Co-Founder - Technology Startup</h3>
-            <p className="text-gray-600">Dec 2024 - Present</p>
-            <p className="mt-2">Leading a tech startup focused on innovative solutions in blockchain, decentralized applications, and full-stack development. Managing a team of developers and overseeing product development lifecycle.</p>
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold">Software Engineer - Freelance</h3>
-            <p className="text-gray-600">Jan 2022 - Nov 2024</p>
-            <p className="mt-2">Worked on multiple projects involving smart contract development, API integrations, and frontend engineering. Specialized in Ethereum and Avalanche ecosystems.</p>
-          </div>
-        </div>
-      </section>
-
+      {/* Technical Skills */}
       <section className="mb-8" aria-labelledby="skills-heading">
-        <h2 id="skills-heading" className="text-2xl font-semibold border-b-2 pb-2 mb-4">Skills</h2>
+        <h2 id="skills-heading" className="text-2xl font-semibold border-b-2 pb-2 mb-4">Technical Skills</h2>
         <ul className="list-disc pl-5 space-y-2">
-          <li>Blockchain Development (EVM, Avalanche Subnets, Solidity, Web3.js, Hardhat)</li>
-          <li>Smart Contracts (Solidity, Hardhat, Remix IDE, OpenZeppelin)</li>
-          <li>Full-Stack Development (React, Node.js, MongoDB, Express.js, GraphQL)</li>
-          <li>DevOps & Cloud (Docker, Kubernetes, AWS, CI/CD Pipelines)</li>
-          <li>Security & Cryptography (Wallet Integrations, Encryption Techniques, Secure APIs)</li>
+          <li><strong>Programming Languages:</strong> C++, Java, JavaScript, Solidity</li>
+          <li><strong>Web Development:</strong> HTML, CSS, React.js, Next.js, Node.js, Express.js</li>
+          <li><strong>Databases:</strong> MongoDB, MySQL</li>
+          <li><strong>Cloud/DevOps:</strong> Docker, Kubernetes, AWS (EC2, S3)</li>
+          <li><strong>Tools & Platforms:</strong> Git, Postman, VS Code, Linux, Selenium, Maven, Gradle, Jenkins</li>
         </ul>
       </section>
 
+      {/* Projects */}
       <section className="mb-8" aria-labelledby="projects-heading">
         <h2 id="projects-heading" className="text-2xl font-semibold border-b-2 pb-2 mb-4">Projects</h2>
         <ul className="list-disc pl-5 space-y-2">
@@ -101,42 +88,64 @@ export default function ResumePage() {
         </ul>
       </section>
 
+      {/* Education */}
       <section className="mb-8" aria-labelledby="education-heading">
         <h2 id="education-heading" className="text-2xl font-semibold border-b-2 pb-2 mb-4">Education</h2>
-        <div>
-          <h3 className="font-semibold">Bachelor's of Engineering in Computer Science</h3>
-          <p>Expected Graduation: 2026</p>
-          <p>Relevant Coursework: Data Structures, Blockchain Development, Cryptography, Web Development</p>
+        <div className="space-y-4">
+          <div>
+            <h3 className="font-semibold">Bachelor of Engineering in Computer Science</h3>
+            <p>Chandigarh University, India | 2022 – 2026 | CGPA: 7.63</p>
+          </div>
+          <div>
+            <h3 className="font-semibold">Intermediate (BSEB)</h3>
+            <p>KST College | 2018 – 2020 | 71.20%</p>
+          </div>
+          <div>
+            <h3 className="font-semibold">Matriculation (BSEB)</h3>
+            <p>Kishan HS School | 2018 | 65.80%</p>
+          </div>
         </div>
       </section>
 
+      {/* Certifications and Achievements */}
       <section className="mb-8" aria-labelledby="certifications-heading">
-        <h2 id="certifications-heading" className="text-2xl font-semibold border-b-2 pb-2 mb-4">Certifications</h2>
+        <h2 id="certifications-heading" className="text-2xl font-semibold border-b-2 pb-2 mb-4">Certifications and Achievements</h2>
         <ul className="list-disc pl-5 space-y-2">
-          <li>Certified Ethereum Developer - ConsenSys Academy</li>
-          <li>AWS Certified Solutions Architect - Amazon</li>
-          <li>Blockchain Security Essentials - Coursera</li>
+          <li>Scholarship Recipient - Metacrafter (Training with distinction)</li>
+          <li>Certificate of Merit in Blockchain (Solidity, Ethereum)</li>
+          <li>Ranked 4th in Aptitude Wizard 2024, Chandigarh University</li>
         </ul>
       </section>
 
-      <section className="mb-8" aria-labelledby="contact-heading">
-        <h2 id="contact-heading" className="text-2xl font-semibold border-b-2 pb-2 mb-4">Contact</h2>
-        <div className="space-y-2">
-          <p>Email: {CONTACT_INFO.email}</p>
-          <p>Phone: {CONTACT_INFO.phone}</p>
-          <p>
-            LinkedIn:{" "}
-            <Link href={CONTACT_INFO.linkedin} className="text-blue-600 hover:text-blue-800" target="_blank" rel="noopener noreferrer">
-              LinkedIn Profile
-            </Link>
-          </p>
-          <p>
-            GitHub:{" "}
-            <Link href={CONTACT_INFO.github} className="text-blue-600 hover:text-blue-800" target="_blank" rel="noopener noreferrer">
-              GitHub Profile
-            </Link>
-          </p>
-        </div>
+      {/* Professional Skills */}
+      <section className="mb-8" aria-labelledby="professional-skills-heading">
+        <h2 id="professional-skills-heading" className="text-2xl font-semibold border-b-2 pb-2 mb-4">Professional Skills</h2>
+        <ul className="list-disc pl-5 space-y-2">
+          <li>Analytical Problem-Solving</li>
+          <li>Effective Technical Communication</li>
+          <li>Team Leadership</li>
+          <li>Agile Development Methodology</li>
+        </ul>
+      </section>
+
+      {/* Languages */}
+      <section className="mb-8" aria-labelledby="languages-heading">
+        <h2 id="languages-heading" className="text-2xl font-semibold border-b-2 pb-2 mb-4">Languages</h2>
+        <ul className="list-disc pl-5 space-y-2">
+          <li>English (Professional Proficiency)</li>
+          <li>Hindi (Native)</li>
+        </ul>
+      </section>
+
+      {/* Interests */}
+      <section className="mb-8" aria-labelledby="interests-heading">
+        <h2 id="interests-heading" className="text-2xl font-semibold border-b-2 pb-2 mb-4">Interests</h2>
+        <ul className="list-disc pl-5 space-y-2">
+          <li>Technology Blogs</li>
+          <li>Emerging Technologies</li>
+          <li>Cricket</li>
+          <li>Photography</li>
+        </ul>
       </section>
 
       <div className="text-center">
