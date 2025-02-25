@@ -10,6 +10,7 @@ import { Heading } from "./Heading";
 import { socials } from "@/constants/socials";
 import { Badge } from "./Badge";
 import { AnimatePresence, motion } from "framer-motion";
+import { MdTableRows } from "react-icons/md";
 import { IconLayoutSidebarRightCollapse } from "@tabler/icons-react";
 import { isMobile } from "@/lib/utils";
 import profileimage from "../../public/about_profile.png";
@@ -47,7 +48,7 @@ export const Sidebar = () => {
         className="fixed lg:hidden bottom-4 right-4 h-8 w-8 border border-neutral-200 dark:border-neutral-700 rounded-full backdrop-blur-sm flex items-center justify-center z-50"
         onClick={() => setOpen(!open)}
       >
-        <IconLayoutSidebarRightCollapse className="h-4 w-4 text-secondary dark:text-gray-300" />
+        <MdTableRows className="h-4 w-4 text-secondary dark:text-green-700" />
       </button>
     </>
   );
