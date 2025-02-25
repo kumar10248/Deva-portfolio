@@ -149,18 +149,25 @@ export default function ResumePage() {
       </section>
 
       <div className="text-center">
-        <Link
-          href="/Devashish_Resume.pdf"
-          className="inline-flex items-center px-6 py-3 bg-blue-500 text-white rounded-lg
-                   hover:bg-blue-600 transition-colors duration-200 font-medium
-                   shadow-sm hover:shadow-md focus:outline-none focus:ring-2
-                   focus:ring-blue-500 focus:ring-offset-2"
-          download="Kumar_Devashish_Resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Download Resume
-        </Link>
+      <Link
+  href="/Devashish_Resume.pdf"
+  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 
+             text-white rounded-lg hover:from-indigo-500 hover:to-blue-700 transition-all duration-300 
+             font-semibold shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 
+             focus:ring-blue-300 focus:ring-offset-2 transform hover:scale-105 backdrop-blur-lg"
+  download="Kumar_Devashish_Resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+    <path fillRule="evenodd" 
+      d="M10 12a1 1 0 0 0 .7-.29l3-3a1 1 0 0 0-1.42-1.42L11 8.59V3a1 1 0 1 0-2 0v5.59L7.71 7.29A1 1 0 0 0 6.29 8.7l3 3a1 1 0 0 0 .71.3zM4 15a1 1 0 1 0 0 2h12a1 1 0 1 0 0-2H4z" 
+      clipRule="evenodd" 
+    />
+  </svg>
+  Download Resume
+</Link>
+
       </div>
     </div>
   )
