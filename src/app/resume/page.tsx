@@ -36,12 +36,12 @@ const PROJECTS = [
 
 export default function ResumePage() {
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
+    <div className="max-w-4xl mx-auto p-6  shadow-lg rounded-lg">
       {/* Header */}
       <header className="text-center mb-8">
         <h1 className="text-4xl font-bold mb-2">Kumar Devashish</h1>
-        <p className="text-gray-600 mb-2">Full-stack Software Engineer with expertise in blockchain and cloud technologies, seeking to build scalable applications and contribute to innovative projects.</p>
-        <div className="text-gray-500 space-x-2">
+        <p className=" mb-2">Full-stack Software Engineer with expertise in blockchain and cloud technologies, seeking to build scalable applications and contribute to innovative projects.</p>
+        <div className=" space-x-2">
           <span>{CONTACT_INFO.email}</span>
           <span>|</span>
           <span>{CONTACT_INFO.phone}</span>
