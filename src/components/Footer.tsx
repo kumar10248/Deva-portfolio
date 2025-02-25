@@ -1,11 +1,15 @@
-"use client";
-import React from "react";
+// components/Footer.tsx
+import { useContext } from "react";
+import { ThemeContext } from "@/app/layout"; // Adjust path as needed
 
 export const Footer = () => {
+  const { theme } = useContext(ThemeContext);
+  
   return (
-    <div className="p-4 text-center justify-center text-xs text-neutral-500 border-t border-neutral-100">
-      <span className="font-semibold">{new Date().getFullYear()} </span>
-      &#8212; Built by Kumar Devashish
-    </div>
+    <footer className="py-6 px-6 border-t border-neutral-200 dark:border-neutral-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 transition-colors duration-200">
+      <div className="max-w-4xl mx-auto">
+        <p>&copy; {new Date().getFullYear()} Devashish. All rights reserved.</p>
+      </div>
+    </footer>
   );
 };
