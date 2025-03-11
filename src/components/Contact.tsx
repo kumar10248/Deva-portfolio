@@ -110,7 +110,7 @@ export const Contact = () => {
             <input
               id="name"
               type="text"
-              placeholder="John Doe"
+              placeholder="Your Name"
               className={`w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border ${
                 formData.name.error ? 'border-red-500' : 'border-gray-200 dark:border-gray-600'
               } text-gray-900 dark:text-gray-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 focus:outline-none transition duration-200`}
@@ -131,7 +131,7 @@ export const Contact = () => {
             <input
               id="email"
               type="email"
-              placeholder="your@email.com"
+              placeholder="Enter your email"
               className={`w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border ${
                 formData.email.error ? 'border-red-500' : 'border-gray-200 dark:border-gray-600'
               } text-gray-900 dark:text-gray-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 focus:outline-none transition duration-200`}
