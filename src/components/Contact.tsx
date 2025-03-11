@@ -59,10 +59,13 @@ export const Contact = () => {
     setIsLoading(true);
 
     try {
+      // Using the exact parameter names from your EmailJS template
       const templateParams = {
-        from_name: formData.name.value,
-        from_email: formData.email.value,
+        name: formData.name.value,
+        email: formData.email.value,
         message: formData.message.value,
+        from_name: formData.name.value,
+        reply_to: formData.email.value
       };
 
       const result = await emailjs.send(
