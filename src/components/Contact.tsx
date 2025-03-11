@@ -23,7 +23,7 @@ export const Contact = () => {
   const [formData, setFormData] = useState<FormState>(defaultFormState);
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState("");
-  const [messageType, setMessageType] = useState<"success" | "error" | "">(""); 
+  const [messageType, setMessageType] = useState<"success" | "error" | "">("");
 
   const validateForm = (): boolean => {
     let isValid = true;
@@ -86,7 +86,7 @@ export const Contact = () => {
       setTimeout(() => {
         setMessage("");
         setMessageType("");
-      }, 3000);
+      }, 5000);
     }
   };
 
@@ -98,80 +98,108 @@ export const Contact = () => {
   };
 
   return (
-    <form className="form" onSubmit={handleSubmit} noValidate>
-      <div className="flex flex-col md:flex-row justify-between gap-5">
-        <div className="flex-1">
-          <input
-            type="text"
-            placeholder="Your Name"
-            className={`bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-200 
-              px-2 py-2 rounded-md text-sm text-neutral-700 w-full
-              ${formData.name.error ? 'border-red-500' : ''}`}
-            value={formData.name.value}
-            onChange={(e) => handleInputChange('name', e.target.value)}
+    <div className="max-w-2xl mx-auto p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+      <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6">Get in Touch</h2>
+      
+      <form className="space-y-6" onSubmit={handleSubmit} noValidate>
+        <div className="flex flex-col md:flex-row gap-6">
+          <div className="flex-1 space-y-2">
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              Your Name
+            </label>
+            <input
+              id="name"
+              type="text"
+              placeholder="John Doe"
+              className={`w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border ${
+                formData.name.error ? 'border-red-500' : 'border-gray-200 dark:border-gray-600'
+              } text-gray-900 dark:text-gray-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 focus:outline-none transition duration-200`}
+              value={formData.name.value}
+              onChange={(e) => handleInputChange('name', e.target.value)}
+              disabled={isLoading}
+              aria-label="Name"
+            />
+            {formData.name.error && (
+              <p className="text-red-500 dark:text-red-400 text-xs mt-1">{formData.name.error}</p>
+            )}
+          </div>
+
+          <div className="flex-1 space-y-2">
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              Email Address
+            </label>
+            <input
+              id="email"
+              type="email"
+              placeholder="your@email.com"
+              className={`w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border ${
+                formData.email.error ? 'border-red-500' : 'border-gray-200 dark:border-gray-600'
+              } text-gray-900 dark:text-gray-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 focus:outline-none transition duration-200`}
+              value={formData.email.value}
+              onChange={(e) => handleInputChange('email', e.target.value)}
+              disabled={isLoading}
+              aria-label="Email"
+            />
+            {formData.email.error && (
+              <p className="text-red-500 dark:text-red-400 text-xs mt-1">{formData.email.error}</p>
+            )}
+          </div>
+        </div>
+
+        <div className="space-y-2">
+          <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            Your Message
+          </label>
+          <textarea
+            id="message"
+            placeholder="Tell us what you'd like to know..."
+            rows={6}
+            className={`w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border ${
+              formData.message.error ? 'border-red-500' : 'border-gray-200 dark:border-gray-600'
+            } text-gray-900 dark:text-gray-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 focus:outline-none transition duration-200`}
+            value={formData.message.value}
+            onChange={(e) => handleInputChange('message', e.target.value)}
             disabled={isLoading}
-            aria-label="Name"
+            aria-label="Message"
           />
-          {formData.name.error && (
-            <p className="text-red-500 text-xs mt-1">{formData.name.error}</p>
+          {formData.message.error && (
+            <p className="text-red-500 dark:text-red-400 text-xs mt-1">{formData.message.error}</p>
           )}
         </div>
 
-        <div className="flex-1">
-          <input
-            type="email"
-            placeholder="Your email address"
-            className={`bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-200 
-              px-2 py-2 rounded-md text-sm text-neutral-700 w-full
-              ${formData.email.error ? 'border-red-500' : ''}`}
-            value={formData.email.value}
-            onChange={(e) => handleInputChange('email', e.target.value)}
-            disabled={isLoading}
-            aria-label="Email"
-          />
-          {formData.email.error && (
-            <p className="text-red-500 text-xs mt-1">{formData.email.error}</p>
-          )}
-        </div>
-      </div>
-
-      <div className="mt-4">
-        <textarea
-          placeholder="Your Message"
-          rows={10}
-          className={`bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-200 
-            px-2 py-2 rounded-md text-sm text-neutral-700 w-full
-            ${formData.message.error ? 'border-red-500' : ''}`}
-          value={formData.message.value}
-          onChange={(e) => handleInputChange('message', e.target.value)}
+        <button
+          className={`w-full py-3 px-6 rounded-lg font-medium text-white 
+            ${isLoading
+              ? 'bg-blue-300 dark:bg-blue-500 cursor-not-allowed'
+              : 'bg-blue-600 hover:bg-blue-700 active:bg-blue-800 dark:bg-blue-500 dark:hover:bg-blue-600 dark:active:bg-blue-700'
+            } transition duration-200 shadow-md`}
+          type="submit"
           disabled={isLoading}
-          aria-label="Message"
-        />
-        {formData.message.error && (
-          <p className="text-red-500 text-xs mt-1">{formData.message.error}</p>
-        )}
-      </div>
-
-      <button
-        className={`w-full px-2 py-2 mt-4 rounded-md font-bold
-          ${isLoading 
-            ? 'bg-neutral-200 text-neutral-400 cursor-not-allowed' 
-            : 'bg-neutral-100 text-neutral-500 hover:bg-neutral-200'
-          }`}
-        type="submit"
-        disabled={isLoading}
-      >
-        {isLoading ? 'Sending...' : 'Submit'}
-      </button>
-
-      {message && (
-        <div className={`mt-4 p-2 rounded-md text-center
-          ${messageType === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}
-          role="alert"
         >
-          {message}
-        </div>
-      )}
-    </form>
+          {isLoading ? (
+            <span className="flex items-center justify-center">
+              <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              Sending...
+            </span>
+          ) : 'Send Message'}
+        </button>
+
+        {message && (
+          <div 
+            className={`p-4 rounded-lg text-center transition-all duration-300 ${
+              messageType === 'success' 
+                ? 'bg-green-50 text-green-800 border border-green-200 dark:bg-green-900/20 dark:text-green-300 dark:border-green-800' 
+                : 'bg-red-50 text-red-800 border border-red-200 dark:bg-red-900/20 dark:text-red-300 dark:border-red-800'
+            }`}
+            role="alert"
+          >
+            <p className="font-medium">{message}</p>
+          </div>
+        )}
+      </form>
+    </div>
   );
 };

@@ -5,6 +5,7 @@ import trunkller from "public/images/trunkller.png";
 import attendance from "public/images/attendance.png";
 
 import plotbot from "public/images/plotbot.png";
+import cuisineExplorer from "public/images/mealpic.png"
 export const products = [
   {
     href: "https://cloakshare.devashish.top",
@@ -86,4 +87,24 @@ export const products = [
       </div>
     ),
   },
+  {
+    href: "https://cuisine.devashish.top",
+    title: "Cuisine",
+    description:
+      "A comprehensive recipe discovery platform that helps users find and create delicious meals based on available ingredients or dietary preferences.",
+    thumbnail: cuisineExplorer,
+    images: [cuisineExplorer, cuisineExplorer],
+    stack: ["React.js", "Tailwind CSS", "Recipe API", "MongoDB"],
+    slug: "cuisine-explorer",
+    content: (
+      <div>
+        <p>
+        Cuisine Explorer is an intelligent recipe discovery platform designed to simplify meal planning and cooking. The application allows users to search for recipes based on ingredients they already have, dietary restrictions, or specific cuisines. With an extensive database of dishes from around the world, it helps users expand their culinary horizons while making the most of available ingredients. The platform features detailed cooking instructions, nutritional information, and estimated preparation times to enhance the cooking experience.{" "}
+        </p>
+        <p>
+        The user-friendly interface includes features like recipe saving, meal planning calendars, and shopping list generation to streamline the cooking process. Users can filter results by preparation time, difficulty level, or nutritional content, making it easier to find recipes that match their specific needs. Cuisine Explorer also offers a community section where food enthusiasts can share their own recipes, modifications, and cooking tips. Whether you're a beginner looking for simple meals or an experienced chef seeking inspiration, Cuisine Explorer provides a valuable resource for discovering and creating delicious dishes.
+        </p>{" "}
+      </div>
+    ),
+  }
 ];

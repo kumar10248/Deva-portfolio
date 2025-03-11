@@ -10,50 +10,56 @@ import { motion } from "framer-motion";
 
 export const Products = () => {
   return (
-    <div>
-      <div className="grid grid-cols-1  gap-10">
+    <div className="container mx-auto py-8">
+      <div className="grid grid-cols-1 gap-8">
         {products.map((product: Product, idx: number) => (
           <motion.div
             key={product.href}
             initial={{
               opacity: 0,
-              x: -50,
+              y: 20,
             }}
             animate={{
               opacity: 1,
-              x: 0,
+              y: 0,
             }}
-            transition={{ duration: 0.2, delay: idx * 0.1 }}
+            transition={{ 
+              duration: 0.4, 
+              delay: idx * 0.1,
+              ease: "easeOut"
+            }}
+            className="shadow-sm hover:shadow-md border border-gray-100 rounded-2xl overflow-hidden"
           >
             <Link
               href={product.slug ? `/projects/${product.slug}` : product.href}
-              key={product.href}
-              className="group flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 hover:bg-gray-50 rounded-2xl transition duration-200 pt-4"
+              className="group flex flex-col md:flex-row hover:bg-gray-50 transition duration-300 ease-in-out"
             >
-              <Image
-                src={product.thumbnail}
-                alt="thumbnail"
-                height="200"
-                width="200"
-                className="rounded-md"
-              />
-              <div className="flex flex-col justify-between">
+              <div className="md:w-1/4 min-w-48">
+                <Image
+                  src={product.thumbnail}
+                  alt={`${product.title} thumbnail`}
+                  height="200"
+                  width="200"
+                  className="w-full h-48 md:h-full object-cover"
+                />
+              </div>
+              <div className="flex flex-col justify-between p-6 md:w-3/4">
                 <div>
                   <Heading
                     as="h4"
-                    className="font-black text-lg md:text-lg lg:text-lg "
+                    className="font-bold text-xl text-gray-800 group-hover:text-blue-600 transition-colors duration-200"
                   >
                     {product.title}
                   </Heading>
-                  <Paragraph className="text-sm md:text-sm lg:text-sm mt-2 max-w-xl">
+                  <Paragraph className="text-gray-600 text-sm md:text-base mt-3 max-w-2xl line-clamp-3">
                     {product.description}
                   </Paragraph>
                 </div>
-                <div className="flex space-x-2 md:mb-1 mt-2 md:mt-0">
+                <div className="flex flex-wrap gap-2 mt-4">
                   {product.stack?.map((stack: string) => (
                     <span
                       key={stack}
-                      className="text-xs  md:text-xs lg:text-xs bg-gray-50 px-2 py-1 rounded-sm text-secondary"
+                      className="text-xs font-medium bg-gray-100 text-gray-700 px-3 py-1 rounded-full"
                     >
                       {stack}
                     </span>
