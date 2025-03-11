@@ -47,7 +47,7 @@ export const Products = () => {
                 <div>
                   <Heading
                     as="h4"
-                    className="font-bold text-xl text-gray-800 group-hover:text-blue-600 transition-colors duration-200"
+                    className="font-bold text-xl text-violet-700 group-hover:text-blue-600 transition-colors duration-200"
                   >
                     {product.title}
                   </Heading>
