@@ -4,6 +4,8 @@ import trunkller from "public/images/trunkller.png";
 
 import attendance from "public/images/attendance.png";
 
+import  question from "public/images/ques.png";
+
 import plotbot from "public/images/plotbot.png";
 import cuisineExplorer from "public/images/mealpic.png"
 export const products = [
@@ -106,5 +108,25 @@ export const products = [
         </p>{" "}
       </div>
     ),
-  }
+  },
+  {
+    href: "https://nptel.devashish.top",
+    title: "NPTEl Question Practice",
+    description:
+      "A collaborative platform for asking and answering questions, fostering knowledge sharing and community engagement.",
+    thumbnail: question,
+    images: [question, question],
+    stack: ["React.js", "Tailwind CSS", "Node.js"," MongoDB"],
+    slug: "ques",
+    content: (
+      <div>
+        <p>
+        Ques is a collaborative platform designed to facilitate knowledge sharing and community engagement through a question-and-answer format. Users can post questions on various topics, and the community can provide answers, insights, and resources. The platform encourages interaction by allowing users to upvote or downvote responses, ensuring that the most relevant and helpful answers rise to the top.{" "}
+        </p>
+        <p>
+        With features like user profiles, reputation systems, and comment sections, Ques fosters a sense of community among users. It also includes search functionality to help users find previously answered questions quickly. Whether you're seeking expert advice or looking to share your knowledge, Ques provides a dynamic space for learning and collaboration.
+        </p>{" "}
+      </div>
+    ),
+  },
 ];
