@@ -17,7 +17,7 @@ export const products = [
     thumbnail: cloakshare,
     images: [cloakshare,cloakshare],
     stack: ["React.js", "Tailwind CSS", "Node.js"," MongoDB"],
-    slug: "aceternity",
+    slug: "cloakshare",
     content: (
       <div>
         <p>
@@ -37,7 +37,7 @@ export const products = [
     thumbnail: trunkller,
     images: [trunkller, trunkller],
     stack: ["TypeScript", "Tailwind CSS", "AI/ML APIs"],
-    slug: "algochurn",
+    slug: "trunkller",
     content: (
       <div>
         <p>
@@ -57,7 +57,7 @@ export const products = [
     thumbnail: attendance,
     images: [attendance, attendance],
     stack: ["React.js", "Node.js", "Express.js"," MongoDB"],
-    slug: "moonbeam",
+    slug: "attendance",
     content: (
       <div>
         <p>
@@ -77,7 +77,7 @@ export const products = [
     thumbnail: plotbot,
     images: [plotbot, plotbot],
     stack: ["React.js", "Javascript","GEMINI API"],
-    slug: "tailwindmasterkit",
+    slug: "plotbot",
     content: (
       <div>
         <p>
@@ -117,7 +117,7 @@ export const products = [
     thumbnail: question,
     images: [question, question],
     stack: ["React.js", "Tailwind CSS", "Node.js"," MongoDB"],
-    slug: "ques",
+    slug: "nptel",
     content: (
       <div>
         <p>
