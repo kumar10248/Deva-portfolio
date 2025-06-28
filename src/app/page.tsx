@@ -20,54 +20,56 @@ export default function Home() {
         </div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-28 pb-16 md:pt-36 md:pb-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-            {/* Left side content */}
-            <div>
-              <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 rounded-full mb-6">
-                <span className="mr-2">👋</span>
-                <span className="text-blue-700 dark:text-blue-300 font-medium">Software Engineer</span>
-              </div>
-              
-              <Heading className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
-                Hello there! I'm Kumar Devasish
-              </Heading>
-              
-              <Paragraph className="text-xl mb-8 text-gray-700 dark:text-gray-300">
-                I'm a full-stack developer that loves building products and web apps that can impact millions of lives
-              </Paragraph>
-              
-              <Paragraph className="text-lg mb-10 text-gray-600 dark:text-gray-400">
-                A passionate software engineer with 3 years of experience building scalable web apps that are performance optimized and good looking.
-              </Paragraph>
-              
-              <div className="flex flex-wrap gap-4">
-                <Link href="/projects" className="px-6 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-medium rounded-lg transition-colors">
-                  View My Work
-                </Link>
-                <Link href="/contact" className="px-6 py-3 bg-white hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-700 font-medium rounded-lg transition-colors">
-                  Get In Touch
-                </Link>
-              </div>
-            </div>
-            
-            {/* Right side image/illustration */}
-            <div className="relative h-96 md:h-auto rounded-2xl overflow-hidden shadow-2xl">
-              {/* Replace with your own image or illustration */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 opacity-20" />
-              <div className="p-8 h-full flex items-center justify-center">
-                <div className="relative w-full h-full max-w-md mx-auto">
-                  {/* Placeholder for profile image or code illustration */}
-                  <Image 
-                      src="/about_profile.png" 
-                      alt="Kumar Devasish - Full Stack Developer"
-                      fill
-                      className="object-cover rounded-xl"
-                      priority
-                    />
-                </div>
-              </div>
-            </div>
-          </div>
+          
+<div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+  {/* Left side content */}
+  <div>
+    <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 rounded-full mb-6">
+      <span className="mr-2">👋</span>
+      <span className="text-blue-700 dark:text-blue-300 font-medium">Software Engineer</span>
+    </div>
+    
+    <Heading className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
+      Hello there! I'm Kumar Devasish
+    </Heading>
+    
+    <Paragraph className="text-xl mb-8 text-gray-700 dark:text-gray-300">
+      I'm a full-stack developer that loves building products and web apps that can impact millions of lives
+    </Paragraph>
+    
+    <Paragraph className="text-lg mb-10 text-gray-600 dark:text-gray-400">
+      A passionate software engineer with 3 years of experience building scalable web apps that are performance optimized and good looking.
+    </Paragraph>
+    
+    <div className="flex flex-wrap gap-4">
+      <Link href="/projects" className="px-6 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-medium rounded-lg transition-colors">
+        View My Work
+      </Link>
+      <Link href="/contact" className="px-6 py-3 bg-white hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-700 font-medium rounded-lg transition-colors">
+        Get In Touch
+      </Link>
+    </div>
+  </div>
+  
+  {/* Right side image - FIXED VERSION */}
+  <div className="relative">
+    {/* Background decorative overlay */}
+    <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 opacity-20 rounded-2xl" />
+    
+    {/* Image container with proper aspect ratio */}
+    <div className="relative aspect-square w-full max-w-md mx-auto rounded-2xl overflow-hidden shadow-2xl">
+      <Image 
+        src="/about_profile.png" 
+        alt="Kumar Devasish - Full Stack Developer"
+        fill
+        className="object-cover"
+        priority
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+      />
+    </div>
+  </div>
+</div>
+          
         </div>
       </div>
       

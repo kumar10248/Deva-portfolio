@@ -18,12 +18,12 @@ const CONTACT_INFO = {
 const PROJECTS = [
   {
     name: "Trunkller - AI UI Component Generator",
-    url: "#",
+    url: "https://trunkller.com",
     description: "Developed AI-powered platform generating customizable React UI components. Scaled application to support 1,500+ active users and process 50,000+ records monthly. Integrated Razorpay payment system for premium feature monetization. Implemented comprehensive user authentication and authorization systems."
   },
   {
     name: "CloakShare - Temporary File and Text Storage",
-    url: "#",
+    url: "https://cloakshare.devashish.top",
     description: "Architected anonymous file-sharing platform with Google Drive API integration. Scaled system to handle 1,000+ files monthly, reducing server response time by 25%. Developed robust authentication and encryption protocols for data security. Containerized application with Docker for consistent deployment."
   },
   {
@@ -46,7 +46,7 @@ const EDUCATION = [
     degree: "Bachelor of Engineering in Computer Science",
     institution: "Chandigarh University, India",
     period: "2022 – 2026",
-    grade: "CGPA: 7.63"
+    grade: "CGPA: 7.75"
   },
   {
     degree: "Intermediate (BSEB)",
