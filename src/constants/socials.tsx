@@ -24,7 +24,7 @@ export const socials = [
     icon: IconBrandYoutube,
   },
   {
-    href: "https://instagram.com/mathmaverick_man",
+    href: "https://instagram.com/kumardevashish48",
     label: "Instagram",
     icon: IconBrandInstagram,
   },
