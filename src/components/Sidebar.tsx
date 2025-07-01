@@ -181,7 +181,7 @@ const SidebarHeader = () => {
       <div className="bg-gray-50 dark:bg-gray-800/50 rounded-lg px-4 py-3 text-xs text-gray-600 dark:text-gray-300">
         <div className="flex justify-between items-center mb-2">
           <span>Profile views</span>
-          <span className="font-medium">1.2k</span>
+          <span className="font-medium">1.3k</span>
         </div>
         <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
           <div className="bg-blue-500 h-1.5 rounded-full" style={{ width: '70%' }}></div>
