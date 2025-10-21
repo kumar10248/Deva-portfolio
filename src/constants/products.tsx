@@ -4,6 +4,8 @@ import trunkller from "public/images/trunkller.png";
 
 import attendance from "public/images/attendance.png";
 
+import cloakshare2 from "public/images/cloakshare-2.png"
+
 import  question from "public/images/ques.png";
 
 import plotbot from "public/images/plotbot.png";
@@ -14,8 +16,8 @@ export const products = [
     title: "cloakshare",
     description:
       "A secure and temporary clipboard for anonymous text and file sharing with auto-deletion.",
-    thumbnail: cloakshare,
-    images: [cloakshare,cloakshare],
+    thumbnail: cloakshare2,
+    images: [cloakshare2,cloakshare],
     stack: ["React.js", "Tailwind CSS", "Node.js"," MongoDB"],
     slug: "cloakshare",
     content: (
