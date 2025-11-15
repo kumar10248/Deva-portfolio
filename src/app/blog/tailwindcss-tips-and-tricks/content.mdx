@@ -3,35 +3,405 @@ import { BlogLayout } from "@/components/BlogLayout";
 import { CodeWindow } from "@/components/CodeWindow";
 
 export const meta = {
-  date: "2023-08-18",
-  title: "Tailwindcss tips and tricks to conquer the world",
+  date: "2024-10-22",
+  title: "Tailwind CSS Tips and Tricks for Faster Development",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. One more lorem so it looks good.",
+    "Discover powerful Tailwind CSS tips, tricks, and best practices to write better styles faster. Learn advanced techniques that will level up your development workflow.",
   image:
     "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2370&q=80",
-  tags: ["tailwindcss", "css", "frontend"],
+  tags: ["TailwindCSS", "CSS", "Frontend"],
 };
 
 export default (props) => <BlogLayout meta={meta} {...props} />;
 
-Velit cillum fugiat proident pariatur anim proident laborum incididunt magna in labore adipisicing veniam quis. Ut et exercitation dolor in enim quis. Et est excepteur exercitation voluptate in qui duis nulla in anim ut commodo deserunt nisi. Dolor pariatur irure occaecat Lorem mollit veniam adipisicing.
+Tailwind CSS has revolutionized how we write styles in modern web development. Its utility-first approach makes styling faster and more maintainable. But there's so much more to Tailwind than just adding classes!
 
-Deserunt qui ea do et laborum ad id. Tempor laborum aute fugiat tempor eu. Amet sint sint proident pariatur eiusmod mollit excepteur excepteur. Dolore cillum nulla enim tempor ad.
+In this article, I'll share some powerful tips and tricks that will help you become more productive with Tailwind CSS.
 
-Laborum quis proident ut anim consectetur. Consequat fugiat eiusmod qui officia duis eu minim cillum do qui. Sunt sit veniam minim ad id sunt magna est enim.
+## 1. Use @apply for Repeated Patterns
 
-Consectetur est sunt minim culpa quis aute officia incididunt ea laboris nulla officia dolor. Cupidatat cupidatat esse veniam cillum labore ullamco aliqua ex. Cillum incididunt ipsum laborum dolor enim incididunt consectetur id consectetur magna. Consequat mollit non ea cupidatat exercitation. Consequat reprehenderit eiusmod nisi ea esse id ut est consequat eu aliqua do quis.
+When you find yourself using the same combination of utilities repeatedly, extract them using `@apply` in your CSS.
 
-Occaecat commodo velit ea consectetur ut sit. Duis eiusmod ad tempor nisi magna dolore incididunt ea dolore. Commodo proident eiusmod consequat cupidatat consectetur adipisicing dolor commodo tempor labore non dolore Lorem consectetur.
+**Instead of:**
 
-## Lorem Heading
+<CodeWindow title="Repeated Classes">
+```html
+<button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+  Button 1
+</button>
+<button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+  Button 2
+</button>
+```
+</CodeWindow>
 
-Nulla velit veniam velit veniam adipisicing et. Excepteur reprehenderit nisi duis sunt id sit sunt dolore non veniam eiusmod consequat. Consectetur ut minim mollit elit commodo enim aute. Proident pariatur anim culpa ex ea et laborum officia.
+**Do this:**
 
-Aliquip et nostrud ex aliqua. Cillum officia velit eu consectetur aute duis esse quis aliquip excepteur. Ex deserunt esse dolore ex in. Enim excepteur amet nulla ipsum aliquip consectetur. Ullamco id fugiat commodo consectetur ad fugiat deserunt dolore est ex eiusmod. Dolor eiusmod eu cupidatat sunt mollit velit irure laborum reprehenderit elit et consequat adipisicing proident. Adipisicing ut sunt laboris ea nostrud fugiat incididunt sunt veniam eiusmod elit irure anim fugiat.
+<CodeWindow title="styles.css">
+```css
+/* In your CSS file */
+.btn-primary {
+  @apply px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600;
+}
+```
+</CodeWindow>
 
-Culpa dolore deserunt occaecat laboris sint dolor veniam et aliquip irure Lorem anim esse. Laborum dolor Lorem in dolor sunt enim cupidatat consectetur ea. Labore nisi est consectetur elit commodo. Enim esse culpa cillum fugiat.
+<CodeWindow title="Component">
+```html
+<button class="btn-primary">Button 1</button>
+<button class="btn-primary">Button 2</button>
+```
+</CodeWindow>
 
-Anim ipsum incididunt voluptate quis duis velit laboris cupidatat ea ipsum qui. Cupidatat do do incididunt nisi nostrud ut fugiat occaecat. Quis labore exercitation aute eiusmod duis consequat dolor ea. Ipsum officia voluptate culpa id. Lorem duis sint ex duis id nisi. Qui ex cillum enim enim. Occaecat elit voluptate eiusmod exercitation velit.
+## 2. Customize Your Colors in tailwind.config.js
 
-Enim occaecat amet ullamco elit id consequat aliqua ut ex. Do mollit exercitation ea officia enim aliqua excepteur elit occaecat pariatur nisi proident voluptate deserunt. Nulla minim id aute officia qui elit. Dolor Lorem excepteur deserunt ipsum esse. Dolore voluptate ex veniam consectetur culpa nulla fugiat non.
+Don't limit yourself to Tailwind's default colors. Add your brand colors to make them available as utilities.
+
+<CodeWindow title="tailwind.config.js">
+```javascript
+// tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        'brand-blue': '#0066CC',
+        'brand-purple': '#6366F1',
+        'success': '#10B981',
+        'warning': '#F59E0B',
+      }
+    }
+  }
+}
+```
+</CodeWindow>
+
+## 3. Use Arbitrary Values for One-Off Designs
+
+Sometimes you need a specific value that doesn't exist in Tailwind. Use arbitrary values with square brackets:
+
+<CodeWindow title="Arbitrary Values">
+```html
+<div class="top-[117px]">Positioned exactly 117px from top</div>
+<div class="bg-[#1da1f2]">Twitter blue background</div>
+<div class="grid-cols-[200px_1fr_1fr]">Custom grid columns</div>
+```
+</CodeWindow>
+
+## 4. Master the Group Modifier
+
+The `group` modifier lets you style children based on parent hover or other states:
+
+<CodeWindow title="Group Hover">
+```html
+<div class="group">
+  <img src="photo.jpg" class="group-hover:scale-110 transition" />
+  <h3 class="group-hover:text-blue-500">Hover the parent!</h3>
+</div>
+```
+</CodeWindow>
+
+When you hover over the parent div, both the image and heading change!
+
+## 5. Use Peer for Sibling Interactions
+
+Style an element based on its sibling's state using the `peer` modifier:
+
+<CodeWindow title="Peer Modifier">
+```html
+<input type="checkbox" class="peer" />
+<label class="peer-checked:text-blue-500 peer-checked:font-bold">
+  I change when checkbox is checked!
+</label>
+```
+</CodeWindow>
+
+This is perfect for custom form controls!
+
+## 6. Create Custom Utilities
+
+Add your own utilities to the Tailwind config:
+
+<CodeWindow title="tailwind.config.js">
+```javascript
+// tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      spacing: {
+        '128': '32rem',
+        '144': '36rem',
+      },
+      borderRadius: {
+        '4xl': '2rem',
+      }
+    }
+  }
+}
+```
+</CodeWindow>
+
+## 7. Use Container Queries (New!)
+
+Tailwind v3.2+ supports container queries. Style elements based on container size, not viewport size:
+
+<CodeWindow title="Container Queries">
+```html
+<div class="@container">
+  <div class="@lg:grid-cols-2 grid">
+    {/* These columns change based on container width, not screen width */}
+  </div>
+</div>
+```
+</CodeWindow>
+
+## 8. Organize Classes with Plugin
+
+Use the official Prettier plugin to automatically sort your classes:
+
+<CodeWindow title="Terminal">
+```bash
+npm install -D prettier prettier-plugin-tailwindcss
+```
+</CodeWindow>
+
+Before:
+
+<CodeWindow title="Before">
+```html
+<div class="text-white bg-blue-500 px-4 py-2 rounded">
+```
+</CodeWindow>
+
+After:
+
+<CodeWindow title="After">
+```html
+<div class="rounded bg-blue-500 px-4 py-2 text-white">
+```
+</CodeWindow>
+
+## 9. Use Dark Mode Effectively
+
+Tailwind makes dark mode super easy with the `dark:` prefix:
+
+<CodeWindow title="Dark Mode">
+```html
+<div class="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100">
+  This adapts to dark mode automatically!
+</div>
+```
+</CodeWindow>
+
+Enable it in your config:
+
+<CodeWindow title="tailwind.config.js">
+```javascript
+module.exports = {
+  darkMode: 'class', // or 'media'
+}
+```
+</CodeWindow>
+
+## 10. Responsive Design Made Easy
+
+Tailwind's responsive modifiers make mobile-first design simple:
+
+<CodeWindow title="Responsive Grid">
+```html
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+  {/* 1 column on mobile, 2 on tablet, 3 on laptop, 4 on desktop */}
+</div>
+```
+</CodeWindow>
+
+## 11. Animation Classes
+
+Tailwind includes useful animation utilities:
+
+<CodeWindow title="Built-in Animations">
+```html
+<div class="animate-spin">⚙️ Loading...</div>
+<div class="animate-bounce">👋 Hello!</div>
+<div class="animate-pulse">💭 Thinking...</div>
+```
+</CodeWindow>
+
+## 12. Create Custom Animations
+
+Add your own animations to the config:
+
+<CodeWindow title="tailwind.config.js">
+```javascript
+module.exports = {
+  theme: {
+    extend: {
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        }
+      },
+      animation: {
+        wiggle: 'wiggle 1s ease-in-out infinite',
+      }
+    }
+  }
+}
+```
+</CodeWindow>
+
+Now use: `animate-wiggle`
+
+## 13. Use Space-Between for Consistent Gaps
+
+Instead of adding margin to every child element:
+
+<CodeWindow title="❌ Not ideal">
+```html
+<div>
+  <div class="mb-4">Item 1</div>
+  <div class="mb-4">Item 2</div>
+  <div class="mb-4">Item 3</div>
+</div>
+```
+</CodeWindow>
+
+<CodeWindow title="✅ Better">
+```html
+<div class="space-y-4">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+</div>
+```
+</CodeWindow>
+
+## 14. Divide Borders Between Elements
+
+Add borders between elements easily:
+
+<CodeWindow title="Divide Borders">
+```html
+<div class="divide-y divide-gray-200">
+  <div class="py-4">Item 1</div>
+  <div class="py-4">Item 2</div>
+  <div class="py-4">Item 3</div>
+</div>
+```
+</CodeWindow>
+
+## 15. Use Ring for Focus States
+
+Rings create beautiful focus states:
+
+<CodeWindow title="Ring Focus">
+```html
+<button class="focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+  Click me!
+</button>
+```
+</CodeWindow>
+
+## 16. Gradient Backgrounds
+
+Create beautiful gradients with built-in utilities:
+
+<CodeWindow title="Gradient">
+```html
+<div class="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500">
+  Beautiful gradient background!
+</div>
+```
+</CodeWindow>
+
+## 17. Use Line Clamp for Text Overflow
+
+Truncate text after a specific number of lines:
+
+<CodeWindow title="Line Clamp">
+```html
+<p class="line-clamp-3">
+  This text will be truncated after 3 lines with an ellipsis...
+</p>
+```
+</CodeWindow>
+
+## 18. Aspect Ratio Made Simple
+
+Maintain aspect ratios easily:
+
+<CodeWindow title="Aspect Ratio">
+```html
+<div class="aspect-video">
+  {/* Always maintains 16:9 ratio */}
+</div>
+
+<div class="aspect-square">
+  {/* Always a perfect square */}
+</div>
+```
+</CodeWindow>
+
+## 19. Create Your Own Plugin
+
+Extend Tailwind with custom plugins:
+
+<CodeWindow title="tailwind.config.js">
+```javascript
+// tailwind.config.js
+const plugin = require('tailwindcss/plugin')
+
+module.exports = {
+  plugins: [
+    plugin(function({ addUtilities }) {
+      addUtilities({
+        '.text-shadow': {
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+        },
+        '.text-shadow-lg': {
+          textShadow: '4px 4px 8px rgba(0, 0, 0, 0.5)',
+        },
+      })
+    })
+  ]
+}
+```
+</CodeWindow>
+
+## 20. Performance Tips
+
+### Purge Unused Styles
+
+Make sure you're purging unused styles in production:
+
+<CodeWindow title="tailwind.config.js">
+```javascript
+module.exports = {
+  content: [
+    './src/**/*.{js,jsx,ts,tsx}',
+    './public/index.html',
+  ],
+  // This removes unused styles in production
+}
+```
+</CodeWindow>
+
+### Use JIT Mode
+
+Tailwind's JIT (Just-In-Time) mode generates styles on-demand, making development faster and the final bundle smaller. It's enabled by default in v3+.
+
+## Conclusion
+
+Tailwind CSS is incredibly powerful when you know these tips and tricks:
+
+✅ Use **@apply** for repeated patterns  
+✅ Customize **colors and spacing** in your config  
+✅ Master **group** and **peer** modifiers  
+✅ Leverage **arbitrary values** for unique designs  
+✅ Use **container queries** for component-based responsive design  
+✅ Enable **dark mode** with the dark: prefix  
+✅ Create **custom animations** and utilities  
+✅ Use **space-between** and **divide** for consistent spacing  
+✅ Optimize with **proper purging** in production
+
+The more you work with Tailwind, the faster you'll become. These tips will help you write better styles in less time. Happy styling! 🎨

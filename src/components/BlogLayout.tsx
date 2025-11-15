@@ -32,27 +32,27 @@ export function BlogLayout({
 
   return (
     <Container>
-      <article>
+      <article className="bg-white dark:bg-gray-900">
         <header className="flex flex-col">
           <Link
             type="button"
             href="/blog"
             aria-label="Go back to articles"
-            className="group mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition  "
+            className="group mb-8 flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-gray-800 shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:ring-zinc-100/5 transition hover:shadow-lg"
           >
-            <ArrowLeftIcon className="h-4 w-4 stroke-zinc-500 transition group-hover:stroke-zinc-700 d" />
+            <ArrowLeftIcon className="h-4 w-4 stroke-zinc-500 dark:stroke-zinc-400 transition group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-200" />
           </Link>
 
-          <Heading className=" py-4">{meta.title}</Heading>
+          <Heading className="py-4 text-gray-900 dark:text-gray-100">{meta.title}</Heading>
           <time
             dateTime={meta.date}
-            className="flex items-center text-base text-zinc-400 "
+            className="flex items-center text-base mb-6"
           >
-            <Paragraph className=" text-zinc-700">
+            <Paragraph className="text-gray-600 dark:text-gray-400">
               {formatDate(meta.date)}
             </Paragraph>
           </time>
-          <div className="w-full mt-4 aspect-w-16 aspect-h-10 bg-gray-100 rounded-lg overflow-hidden xl:aspect-w-16 xl:aspect-h-10 relative">
+          <div className="w-full mt-4 aspect-w-16 aspect-h-10 bg-gray-100 dark:bg-gray-800 rounded-xl overflow-hidden xl:aspect-w-16 xl:aspect-h-10 relative shadow-lg">
             <Image
               src={meta.image}
               alt="thumbnail"
@@ -62,7 +62,7 @@ export function BlogLayout({
             />
           </div>
         </header>
-        <Prose className="mt-8">{children}</Prose>
+        <Prose className="mt-12 pb-12">{children}</Prose>
       </article>
     </Container>
   );

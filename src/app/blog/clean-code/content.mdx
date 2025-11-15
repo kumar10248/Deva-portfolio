@@ -3,7 +3,7 @@ import { BlogLayout } from "@/components/BlogLayout";
 import { CodeWindow } from "@/components/CodeWindow";
 
 export const meta = {
-  date: "2023-08-18",
+  date: "2024-08-18",
   title: "Writing Clean Code With React",
   description:
     "Effective and efficient ways to write clean code with React while keeping in mind the performance and maintainability of the codebase.",
@@ -14,90 +14,247 @@ export const meta = {
 
 export default (props) => <BlogLayout meta={meta} {...props} />;
 
-Velit cillum fugiat proident pariatur anim proident laborum incididunt magna in labore adipisicing veniam quis. Ut et exercitation dolor in enim quis. Et est excepteur exercitation voluptate in qui duis nulla in anim ut commodo deserunt nisi. Dolor pariatur irure occaecat Lorem mollit veniam adipisicing.
+Writing clean code is not just about making your code work—it's about making it **readable, maintainable, and scalable**. When working with React, following clean code principles becomes even more important because React applications can quickly grow complex.
 
-Deserunt qui ea do et laborum ad id. Tempor laborum aute fugiat tempor eu. Amet sint sint proident pariatur eiusmod mollit excepteur excepteur. Dolore cillum nulla enim tempor ad.
+In this article, I'll share practical tips and best practices for writing clean React code that your team (and future you) will thank you for.
 
- quis proident ut anim consectetur. Consequat fugiat eiusmod qui officia duis eu minim cillum do qui. Sunt sit veniam minim ad id sunt magna est enim.
+## Why Clean Code Matters
 
-Consectetur est sunt minim culpa quis aute officia incididunt ea laboris nulla officia dolor. Cupidatat cupidatat esse veniam cillum labore ullamco aliqua ex. Cillum incididunt ipsum laborum dolor enim incididunt consectetur id consectetur magna. Consequat mollit non ea cupidatat exercitation.
+Clean code is easier to understand, debug, and modify. When you write clean code, you're not just writing for the computer—you're writing for other developers who will read your code later. This includes your future self!
 
-Occaecat commodo velit ea consectetur ut sit. Duis eiusmod ad tempor nisi magna dolore incididunt ea dolore. Commodo proident eiusmod consequat cupidatat consectetur adipisicing dolor commodo tempor labore non dolore Lorem consectetur.
+Here are the key benefits:
 
-## Code Snippet
+- **Easier debugging** - When something breaks, you can quickly find the problem
+- **Faster onboarding** - New team members can understand the codebase quickly
+- **Better collaboration** - Your team can work together more efficiently
+- **Fewer bugs** - Clear code has fewer hidden surprises
 
-<CodeWindow title="BoxesContainer.tsx">
+## 1. Use Meaningful Component Names
 
-```TSX
-import React from "react";
-import { motion } from "framer-motion";
+Your component names should clearly describe what they do. Avoid generic names like `Component1` or `MyComponent`.
 
-export const BoxesContainer = () => {
-  const rows = new Array(150).fill(1);
-  const cols = new Array(100).fill(1);
-  let colors = [
-    "--sky-300",
-    "--pink-300",
-    "--green-300",
-    "--yellow-300",
-    "--red-300",
-    "--purple-300",
-    "--blue-300",
-    "--indigo-300",
-    "--violet-300",
-  ];
-  const getRandomColor = () => {
-    return colors[Math.floor(Math.random() * colors.length)];
-  };
+<CodeWindow title="Bad Example">
+```jsx
+function Card() {
+  return <div>User info here</div>;
+}
+```
+</CodeWindow>
+
+<CodeWindow title="Good Example">
+```jsx
+function UserProfileCard() {
+  return <div>User info here</div>;
+}
+```
+</CodeWindow>
+
+## 2. Keep Components Small and Focused
+
+Each component should do one thing and do it well. If your component is getting too long (more than 200-300 lines), it's probably time to break it down.
+
+<CodeWindow title="Bad Example">
+```jsx
+function Dashboard() {
+  // 500 lines of code handling everything
+  // user data, charts, notifications, settings...
+}
+```
+</CodeWindow>
+
+<CodeWindow title="Good Example">
+```jsx
+function Dashboard() {
+  return (
+    <div>
+      <UserHeader />
+      <ChartsSection />
+      <NotificationPanel />
+      <SettingsWidget />
+    </div>
+  );
+}
+```
+</CodeWindow>
+
+## 3. Use Custom Hooks for Reusable Logic
+
+Instead of repeating the same logic in multiple components, extract it into a custom hook.
+
+<CodeWindow title="useUserData.js">
+```jsx
+// Custom hook
+function useUserData(userId) {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchUser(userId).then(data => {
+      setUser(data);
+      setLoading(false);
+    });
+  }, [userId]);
+
+  return { user, loading };
+}
+
+// Use it in any component
+function UserProfile({ userId }) {
+  const { user, loading } = useUserData(userId);
+  
+  if (loading) return <Spinner />;
+  return <div>{user.name}</div>;
+}
+```
+</CodeWindow>
+
+## 4. Avoid Prop Drilling
+
+When you need to pass data through many levels of components, consider using Context API or state management libraries like Redux or Zustand.
+
+<CodeWindow title="Bad Example - Prop Drilling">
+```jsx
+<App>
+  <Header user={user} />
+    <Nav user={user} />
+      <Profile user={user} />
+</App>
+```
+</CodeWindow>
+
+<CodeWindow title="Good Example - Context API">
+```jsx
+<UserContext.Provider value={user}>
+  <App>
+    <Header />
+    <Nav />
+    <Profile />
+  </App>
+</UserContext.Provider>
+```
+</CodeWindow>
+
+## 5. Write Descriptive Props
+
+Props should have clear names that explain what they do. Avoid single letters or abbreviations.
+
+<CodeWindow title="Bad Example">
+```jsx
+<Button clk={handleClick} txt="Submit" />
+```
+</CodeWindow>
+
+<CodeWindow title="Good Example">
+```jsx
+<Button onClick={handleClick} text="Submit" />
+```
+</CodeWindow>
+
+## 6. Handle Loading and Error States
+
+Always consider what happens when data is loading or when errors occur.
+
+<CodeWindow title="ProductList.jsx">
+```jsx
+function ProductList() {
+  const { products, loading, error } = useProducts();
+
+  if (loading) return <LoadingSpinner />;
+  if (error) return <ErrorMessage message={error} />;
+  if (!products.length) return <EmptyState />;
 
   return (
-    <div
-      style={{
-        transform: `translate(-40%,-60%) skewX(-48deg) skewY(14deg) scale(0.675) rotate(0deg) translateZ(0)`,
-      }}
-      className="absolute left-1/4 p-4 -top-1/4 flex  -translate-x-1/2 -translate-y-1/2 w-full h-full z-0 "
-    >
-      {rows.map((_, i) => (
-        <motion.div
-          key={`row` + i}
-          className="w-16 h-8  border-l  border-slate-700 relative"
-        >
-          {cols.map((_, j) => (
-            <motion.div
-              whileHover={{
-                backgroundColor: `var(${getRandomColor()})`,
-                transition: { duration: 0 },
-              }}
-              animate={{
-                transition: { duration: 2 },
-              }}
-              key={`col` + j}
-              className="w-16 h-8  border-r border-t border-slate-700 relative"
-            >
-              {j % 2 === 0 && i % 2 === 0 ? (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  className="absolute h-6 w-10 -top-[14px] -left-[22px] text-slate-700 stroke-[1px] pointer-events-none"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 6v12m6-6H6"
-                  />
-                </svg>
-              ) : null}
-            </motion.div>
-          ))}
-        </motion.div>
+    <div>
+      {products.map(product => (
+        <ProductCard key={product.id} product={product} />
       ))}
     </div>
   );
+}
+```
+</CodeWindow>
+
+## 7. Use Constants for Magic Values
+
+Don't hardcode values throughout your code. Use constants with descriptive names.
+
+<CodeWindow title="Bad Example">
+```jsx
+if (user.role === 2) {
+  // show admin panel
+}
+```
+</CodeWindow>
+
+<CodeWindow title="Good Example">
+```jsx
+const USER_ROLES = {
+  USER: 1,
+  ADMIN: 2,
+  MODERATOR: 3
 };
 
+if (user.role === USER_ROLES.ADMIN) {
+  // show admin panel
+}
 ```
-
 </CodeWindow>
+
+## 8. Format Your Code Consistently
+
+Use tools like Prettier and ESLint to maintain consistent formatting across your codebase. This removes debates about code style and makes everything look uniform.
+
+## Example: A Clean React Component
+
+<CodeWindow title="UserDashboard.tsx">
+```TSX
+import React, { useState, useEffect } from "react";
+import { useUser } from "@/hooks/useUser";
+import { LoadingSpinner } from "@/components/LoadingSpinner";
+import { ErrorMessage } from "@/components/ErrorMessage";
+
+// Clean, focused component with clear responsibility
+export function UserDashboard({ userId }) {
+  const { user, loading, error } = useUser(userId);
+
+  // Early returns for different states
+  if (loading) return <LoadingSpinner />;
+  if (error) return <ErrorMessage message={error} />;
+  if (!user) return <div>User not found</div>;
+
+  // Main render - clean and readable
+  return (
+    <div className="dashboard">
+      <h1>Welcome, {user.name}!</h1>
+      <div className="stats">
+        <StatCard label="Projects" value={user.projects} />
+        <StatCard label="Tasks" value={user.tasks} />
+        <StatCard label="Messages" value={user.messages} />
+      </div>
+    </div>
+  );
+}
+
+// Small, reusable component
+function StatCard({ label, value }) {
+  return (
+    <div className="stat-card">
+      <span className="label">{label}</span>
+      <span className="value">{value}</span>
+    </div>
+  );
+}
+```
+</CodeWindow>
+
+## Conclusion
+
+Writing clean React code is a skill that improves with practice. Start by following these principles:
+
+1. **Name things clearly** - Use descriptive names for components, functions, and variables
+2. **Keep it simple** - Break down complex components into smaller ones
+3. **Be consistent** - Follow the same patterns throughout your codebase
+4. **Think about others** - Write code that's easy for your team to understand
+5. **Use the right tools** - Leverage ESLint, Prettier, and TypeScript
+
+Remember: **Clean code is not about being perfect—it's about being clear and maintainable.** Your future self will thank you for taking the extra time to write clean, readable code today.
