@@ -32,8 +32,8 @@ export function BlogLayout({
 
   return (
     <Container>
-      <article className="bg-white dark:bg-gray-900">
-        <header className="flex flex-col">
+      <article className="bg-white dark:bg-gray-900 mobile-safe">
+        <header className="flex flex-col mobile-safe">
           <Link
             type="button"
             href="/blog"
@@ -52,7 +52,7 @@ export function BlogLayout({
               {formatDate(meta.date)}
             </Paragraph>
           </time>
-          <div className="w-full mt-3 md:mt-4 aspect-w-16 aspect-h-10 bg-gray-100 dark:bg-gray-800 rounded-lg md:rounded-xl overflow-hidden xl:aspect-w-16 xl:aspect-h-10 relative shadow-lg">
+          <div className="w-full mt-3 md:mt-4 aspect-w-16 aspect-h-10 bg-gray-100 dark:bg-gray-800 rounded-lg md:rounded-xl overflow-hidden xl:aspect-w-16 xl:aspect-h-10 relative shadow-lg mobile-safe">
             <Image
               src={meta.image}
               alt="thumbnail"
@@ -62,7 +62,7 @@ export function BlogLayout({
             />
           </div>
         </header>
-        <Prose className="mt-8 md:mt-12 pb-8 md:pb-12">{children}</Prose>
+        <Prose className="mt-8 md:mt-12 pb-8 md:pb-12 mobile-safe">{children}</Prose>
       </article>
     </Container>
   );

@@ -117,19 +117,20 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en" className={`${inter.variable} ${theme === 'dark' ? 'dark' : ''}`}>
       <head>
         <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
       </head>
       <body
         className={twMerge(
           inter.className,
-          "flex antialiased h-screen overflow-hidden bg-gray-100 dark:bg-gray-900 transition-colors duration-200"
+          "flex antialiased h-screen overflow-hidden bg-gray-100 dark:bg-gray-900 transition-colors duration-200 max-w-screen"
         )}
       >
         <ThemeContext.Provider value={{ theme, toggleTheme }}>
           <ThemeToggle />
-          <main className="flex flex-1">
+          <main className="flex flex-1 overflow-x-hidden">
             <Sidebar />
-            <div className="lg:pl-2 lg:pt-2 bg-gray-100 dark:bg-gray-900 flex-1 overflow-y-auto transition-colors duration-200">
-              <div className="flex-1 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 min-h-screen lg:rounded-tl-xl border border-transparent lg:border-neutral-200 dark:lg:border-neutral-700 overflow-y-auto transition-colors duration-200">
+            <div className="lg:pl-2 lg:pt-2 bg-gray-100 dark:bg-gray-900 flex-1 overflow-y-auto overflow-x-hidden transition-colors duration-200">
+              <div className="flex-1 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 min-h-screen lg:rounded-tl-xl border border-transparent lg:border-neutral-200 dark:lg:border-neutral-700 overflow-y-auto overflow-x-hidden transition-colors duration-200">
                 {children}
                 <Footer />
               </div>

@@ -8,8 +8,33 @@ import type { MDXComponents } from "mdx/types";
 // This file is required to use MDX in `app` directory.
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
-    // Allows customizing built-in components, e.g. to add styling.
-    // h1: ({ children }) => <h1 style={{ fontSize: "100px" }}>{children}</h1>,
+    // Wrap all divs with responsive constraints
+    div: ({ children, className, ...props }: any) => (
+      <div 
+        className={`max-w-full overflow-x-hidden ${className || ''}`}
+        {...props}
+      >
+        {children}
+      </div>
+    ),
+    // Ensure images are responsive
+    img: ({ src, alt, className, ...props }: any) => (
+      <img
+        src={src}
+        alt={alt}
+        className={`max-w-full h-auto ${className || ''}`}
+        {...props}
+      />
+    ),
+    // Ensure pre/code blocks don't overflow
+    pre: ({ children, className, ...props }: any) => (
+      <pre
+        className={`overflow-x-auto max-w-full ${className || ''}`}
+        {...props}
+      >
+        {children}
+      </pre>
+    ),
     ...components,
   };
 }

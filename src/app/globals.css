@@ -3,12 +3,23 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
   }
   
   body {
     @apply text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-950;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    position: relative;
   }
   
   /* Custom scrollbar styles */
@@ -92,9 +103,31 @@
     @apply text-xs md:text-sm overflow-x-auto block md:table w-full;
   }
   
-  /* Grid layouts in blog posts */
+  /* Grid layouts in blog posts - CRITICAL FOR MOBILE */
   article .grid {
-    @apply gap-3 md:gap-6;
+    @apply gap-2 md:gap-4 lg:gap-6;
+  }
+  
+  /* Force all divs in articles to be responsive */
+  article > div,
+  article div[className*="grid"],
+  article div[className*="flex"] {
+    @apply max-w-full;
+  }
+  
+  /* Ensure flex containers wrap on mobile */
+  article div[className*="flex"]:not([className*="flex-col"]) {
+    @apply flex-wrap;
+  }
+  
+  /* Make gradient boxes responsive */
+  article div[className*="bg-gradient"] {
+    @apply p-3 md:p-4 lg:p-6 text-sm md:text-base;
+  }
+  
+  /* Responsive spacing for custom components */
+  article div[className*="rounded"] {
+    @apply my-4 md:my-6 lg:my-8;
   }
   
   /* Emoji and special characters */
@@ -102,13 +135,31 @@
     @apply mb-2;
   }
   
-  /* Prevent horizontal overflow */
+  /* Prevent horizontal overflow - MOST IMPORTANT */
   article {
-    @apply overflow-x-hidden;
+    @apply overflow-x-hidden w-full;
   }
   
   article * {
     @apply max-w-full;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Fix for nested grids and flex containers */
+  article div[className*="md:grid-cols"] {
+    @apply grid-cols-1;
+  }
+  
+  /* Ensure proper text sizing in boxes */
+  article div[className*="bg-"] p,
+  article div[className*="bg-"] span {
+    @apply text-xs md:text-sm lg:text-base;
+  }
+  
+  /* Make badges and pills responsive */
+  article span[className*="rounded-full"] {
+    @apply text-xs md:text-sm px-2 py-1 md:px-4 md:py-2;
   }
 }
 

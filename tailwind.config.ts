@@ -26,7 +26,7 @@ const config: Config = {
   },
   plugins: [
     require("@tailwindcss/typography"),
-    plugin(function({ addBase, theme }) {
+    plugin(function({ addBase, addUtilities, theme }) {
       addBase({
         ':root': {
           '--color-primary': '51 65 85',   // slate-700
@@ -45,6 +45,15 @@ const config: Config = {
           '--color-card': '30 41 59', // slate-800
           '--color-card-foreground': '248 250 252', // slate-50
           '--color-border': '51 65 85', // slate-700
+        },
+      });
+      // Add responsive utilities
+      addUtilities({
+        '.mobile-safe': {
+          'max-width': '100vw',
+          'overflow-x': 'hidden',
+          'word-wrap': 'break-word',
+          'overflow-wrap': 'break-word',
         },
       });
     }),
