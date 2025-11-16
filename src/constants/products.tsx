@@ -11,6 +11,7 @@ import  question from "public/images/ques.png";
 import plotbot from "public/images/plotbot.png";
 import cuisineExplorer from "public/images/mealpic.png"
 import calculator from "public/images/calculator.png"
+import jsApp from "public/images/js.png"
 export const products = [
   {
     href: "https://cloakshare.devashish.top",
@@ -149,6 +150,26 @@ export const products = [
         <p>
         One of the key features of Sigma Calculator is its calculation history tracking, allowing users to review and reference previous computations without losing their work. The interface includes multiple modes such as DEG (degrees) and RAD (radians) for trigonometric functions, ensuring accuracy across different mathematical contexts. Memory functions (MC, MR, MS, M+, M-) enable users to store and recall values for complex multi-step calculations. The calculator also features a clean, intuitive design with responsive buttons and a clear display, making it accessible across desktop and mobile devices. Whether performing basic arithmetic or advanced scientific calculations, Sigma Calculator provides a reliable and efficient solution for mathematical problem-solving.
         </p>{" "}
+      </div>
+    ),
+  },
+  {
+    href: "https://js.devashish.top",
+    title: "JavaScript Mastery",
+    description:
+      "An interactive JavaScript learning platform with guided readings, practice quizzes, and progress tracking.",
+    thumbnail: jsApp,
+    images: [jsApp, jsApp],
+    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    slug: "javascript-mastery",
+    content: (
+      <div>
+        <p>
+          JavaScript Mastery (js.devashish.top) is an interactive learning hub that combines concise reading materials, hands-on code examples, and practice quizzes to help learners build real-world JavaScript skills.
+        </p>
+        <p>
+          The platform provides multiple learning paths, instant quiz feedback, and progress tracking. Built with Next.js and TypeScript, it focuses on performance and a responsive experience across devices.
+        </p>
       </div>
     ),
   },
