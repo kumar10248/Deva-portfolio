@@ -1,13 +1,13 @@
 "use client";
 import Link from 'next/link'
 import Image from 'next/image'
-import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaDownload, FaGraduationCap, FaBriefcase, FaCode, FaTrophy, FaLanguage, FaHeart } from 'react-icons/fa'
+import { FaEnvelope, FaLinkedin, FaGithub, FaDownload, FaGraduationCap, FaBriefcase, FaCode, FaTrophy, FaLanguage, FaHeart } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 
 const CONTACT_INFO = {
   email: "kumardevashish000@gmail.com",
   phone: "+91 8986416949",
-  linkedin: "https://www.linkedin.com/in/kumar-devashish",
+  linkedin: "https://linkedin.com/in/kumar-devashishh",
   github: "https://github.com/kumar10248"
 } as const;
 
