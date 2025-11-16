@@ -3,12 +3,12 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
-    default: "Devashish Kumar - Full Stack Developer & Software Engineer",
-    template: "%s | Devashish Kumar"
+    default: "Kumar Devashish - Full Stack Developer & Software Engineer",
+    template: "%s | Kumar Devashish"
   },
   description: "Full Stack Developer specializing in React, Next.js, Node.js, and modern web technologies. Building scalable applications and sharing knowledge through technical writing. Explore my portfolio, projects, and blog.",
   keywords: [
-    "Devashish Kumar",
+    "Kumar Devashish",
     "Full Stack Developer",
     "Software Engineer",
     "React Developer",
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     "Clean Code",
     "UI/UX Design"
   ],
-  authors: [{ name: "Devashish Kumar" }],
-  creator: "Devashish Kumar",
-  publisher: "Devashish Kumar",
+  authors: [{ name: "Kumar Devashish" }],
+  creator: "Kumar Devashish",
+  publisher: "Kumar Devashish",
   metadataBase: new URL("https://devashish.top"),
   alternates: {
     canonical: "/",
@@ -36,21 +36,21 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://devashish.top",
-    siteName: "Devashish Kumar Portfolio",
-    title: "Devashish Kumar - Full Stack Developer & Software Engineer",
+    siteName: "Kumar Devashish Portfolio",
+    title: "Kumar Devashish - Full Stack Developer & Software Engineer",
     description: "Full Stack Developer specializing in React, Next.js, Node.js, and modern web technologies. Building scalable applications and sharing knowledge through technical writing.",
     images: [
       {
         url: "/images/about_profile.png",
         width: 1200,
         height: 630,
-        alt: "Devashish Kumar - Full Stack Developer"
+        alt: "Kumar Devashish - Full Stack Developer"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Devashish Kumar - Full Stack Developer & Software Engineer",
+    title: "Kumar Devashish - Full Stack Developer & Software Engineer",
     description: "Full Stack Developer specializing in React, Next.js, Node.js, and modern web technologies. Building scalable applications and sharing knowledge.",
     images: ["/images/about_profile.png"],
     creator: "@kumarDe10248"
@@ -71,7 +71,6 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
-  manifest: "/site.webmanifest",
   viewport: {
     width: "device-width",
     initialScale: 1,
