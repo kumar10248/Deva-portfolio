@@ -10,6 +10,7 @@ import  question from "public/images/ques.png";
 
 import plotbot from "public/images/plotbot.png";
 import cuisineExplorer from "public/images/mealpic.png"
+import calculator from "public/images/calculator.png"
 export const products = [
   {
     href: "https://cloakshare.devashish.top",
@@ -127,6 +128,26 @@ export const products = [
         </p>
         <p>
         With features like user profiles, reputation systems, and comment sections, Ques fosters a sense of community among users. It also includes search functionality to help users find previously answered questions quickly. Whether you're seeking expert advice or looking to share your knowledge, Ques provides a dynamic space for learning and collaboration.
+        </p>{" "}
+      </div>
+    ),
+  },
+  {
+    href: "https://sigma.devashish.top",
+    title: "Sigma Calculator",
+    description:
+      "A powerful scientific calculator with advanced mathematical functions, history tracking, and multiple calculation modes.",
+    thumbnail: calculator,
+    images: [calculator, calculator],
+    stack: ["HTML", "JavaScript", "CSS3"],
+    slug: "sigma-calculator",
+    content: (
+      <div>
+        <p>
+        Sigma Calculator is a comprehensive scientific calculator designed to handle complex mathematical operations with ease and precision. Built with a modern web interface, it provides students, engineers, and professionals with a powerful computational tool directly in their browser. The calculator supports a wide range of functions including trigonometric operations (sin, cos, tan), logarithmic calculations, exponential functions, factorial computations, and advanced mathematical operations like square roots, power functions, and modular arithmetic.{" "}
+        </p>
+        <p>
+        One of the key features of Sigma Calculator is its calculation history tracking, allowing users to review and reference previous computations without losing their work. The interface includes multiple modes such as DEG (degrees) and RAD (radians) for trigonometric functions, ensuring accuracy across different mathematical contexts. Memory functions (MC, MR, MS, M+, M-) enable users to store and recall values for complex multi-step calculations. The calculator also features a clean, intuitive design with responsive buttons and a clear display, making it accessible across desktop and mobile devices. Whether performing basic arithmetic or advanced scientific calculations, Sigma Calculator provides a reliable and efficient solution for mathematical problem-solving.
         </p>{" "}
       </div>
     ),
