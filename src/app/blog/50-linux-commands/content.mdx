@@ -1,0 +1,466 @@
+import { BlogLayout } from "@/components/BlogLayout";
+import { CodeWindow } from "@/components/CodeWindow";
+
+export const meta = {
+  date: "2025-11-16",
+  title: "50 Linux Commands You Should Know",
+  description: "An essential list of 50 Linux commands every developer, sysadmin, and power user should know.",
+  image: "/images/linux-cover.png",
+  tags: ["Linux", "CLI", "DevOps", "Shell", "Commands"]
+};
+
+export default (props) => <BlogLayout meta={meta} {...props} />;
+
+# 🐧 50 Linux Commands You Should Know
+
+A practical cheat-sheet for beginners, developers, DevOps engineers, and power users.
+
+Below is a clean, beginner-friendly list of **50 essential Linux commands**, each with a simple explanation and example.
+
+<div className="my-8 flex justify-center">
+  <img 
+    src="/images/linux-command.png" 
+    alt="Essential Linux Commands Cheatsheet" 
+    className="rounded-lg shadow-lg max-w-full h-auto"
+  />
+</div>
+
+---
+
+## 1. ls — List files and directories
+
+Lists the contents of the current directory.
+
+<CodeWindow title="bash">
+```bash
+ls
+```
+</CodeWindow>
+
+## 2. cd — Change directory
+
+Move to another directory.
+
+<CodeWindow title="bash">
+```bash
+cd dir_name
+```
+</CodeWindow>
+
+## 3. mkdir — Create a directory
+
+Creates a new folder.
+
+<CodeWindow title="bash">
+```bash
+mkdir devashish
+```
+</CodeWindow>
+
+## 4. rmdir — Remove an empty directory
+
+<CodeWindow title="bash">
+```bash
+rmdir folder_name
+```
+</CodeWindow>
+
+## 5. rm — Remove files or directories
+
+Careful: can delete recursively with -r.
+
+<CodeWindow title="bash">
+```bash
+rm file.txt
+rm -r folder_name
+```
+</CodeWindow>
+
+## 6. touch — Create an empty file
+
+<CodeWindow title="bash">
+```bash
+touch notes.txt
+```
+</CodeWindow>
+
+## 7. cat — View file contents
+
+<CodeWindow title="bash">
+```bash
+cat file.txt
+```
+</CodeWindow>
+
+## 8. nano — Edit a file in terminal
+
+Begin editing quickly in the terminal.
+
+<CodeWindow title="bash">
+```bash
+nano file.txt
+```
+</CodeWindow>
+
+## 9. vim — Advanced terminal editor
+
+Powerful editor for advanced users.
+
+<CodeWindow title="bash">
+```bash
+vim file.txt
+```
+</CodeWindow>
+
+## 10. cp — Copy files/folders
+
+<CodeWindow title="bash">
+```bash
+cp source.txt destination.txt
+cp -r src/ backup/
+```
+</CodeWindow>
+
+## 11. mv — Move or rename files
+
+<CodeWindow title="bash">
+```bash
+mv old.txt new.txt
+```
+</CodeWindow>
+
+## 12. pwd — Show current directory
+
+<CodeWindow title="bash">
+```bash
+pwd
+```
+</CodeWindow>
+
+## 13. find — Search for files
+
+Search recursively for files by name.
+
+<CodeWindow title="bash">
+```bash
+find /home -name "file.txt"
+```
+</CodeWindow>
+
+## 14. grep — Search inside files
+
+Search for text patterns inside files.
+
+<CodeWindow title="bash">
+```bash
+grep "keyword" file.txt
+```
+</CodeWindow>
+
+## 15. tar — Create/extract archives
+
+<CodeWindow title="bash">
+```bash
+# create
+tar -czf archive.tar.gz folder/
+# extract
+tar -xzf archive.tar.gz
+```
+</CodeWindow>
+
+## 16. zip / unzip — Compress / extract zip files
+
+<CodeWindow title="bash">
+```bash
+zip file.zip folder/
+unzip file.zip
+```
+</CodeWindow>
+
+## 17. wget — Download a file
+
+<CodeWindow title="bash">
+```bash
+wget https://example.com/file.zip
+```
+</CodeWindow>
+
+## 18. curl — Fetch data from the internet
+
+Useful for quick HTTP requests.
+
+<CodeWindow title="bash">
+```bash
+curl https://api.example.com
+```
+</CodeWindow>
+
+## 19. chmod — Change file permissions
+
+<CodeWindow title="bash">
+```bash
+chmod +x script.sh
+```
+</CodeWindow>
+
+## 20. chown — Change file ownership
+
+<CodeWindow title="bash">
+```bash
+sudo chown user:user file.txt
+```
+</CodeWindow>
+
+## 21. ps — View running processes
+
+<CodeWindow title="bash">
+```bash
+ps aux
+```
+</CodeWindow>
+
+## 22. kill — Stop a process
+
+<CodeWindow title="bash">
+```bash
+kill PID
+kill -9 PID
+```
+</CodeWindow>
+
+## 23. top — Real-time system activity
+
+<CodeWindow title="bash">
+```bash
+top
+```
+</CodeWindow>
+
+## 24. htop — Better version of top
+
+(If installed.)
+
+<CodeWindow title="bash">
+```bash
+htop
+```
+</CodeWindow>
+
+## 25. df — Disk usage
+
+<CodeWindow title="bash">
+```bash
+df -h
+```
+</CodeWindow>
+
+## 26. du — Directory size
+
+<CodeWindow title="bash">
+```bash
+du -sh folder/
+```
+</CodeWindow>
+
+## 27. echo — Print text
+
+<CodeWindow title="bash">
+```bash
+echo "Hello, World!"
+```
+</CodeWindow>
+
+## 28. man — Show command manual
+
+<CodeWindow title="bash">
+```bash
+man ls
+```
+</CodeWindow>
+
+## 29. apt update — Update package list (Debian/Ubuntu)
+
+<CodeWindow title="bash">
+```bash
+sudo apt update
+```
+</CodeWindow>
+
+## 30. apt install — Install packages (Debian/Ubuntu)
+
+<CodeWindow title="bash">
+```bash
+sudo apt install nginx
+```
+</CodeWindow>
+
+## 31. yum install — Install packages (CentOS/RHEL)
+
+<CodeWindow title="bash">
+```bash
+sudo yum install git
+```
+</CodeWindow>
+
+## 32. systemctl — Manage services
+
+<CodeWindow title="bash">
+```bash
+sudo systemctl status nginx
+sudo systemctl restart nginx
+```
+</CodeWindow>
+
+## 33. service — Legacy service manager
+
+<CodeWindow title="bash">
+```bash
+sudo service ssh start
+```
+</CodeWindow>
+
+## 34. hostname — Show system hostname
+
+<CodeWindow title="bash">
+```bash
+hostname
+```
+</CodeWindow>
+
+## 35. ping — Test internet / host connectivity
+
+<CodeWindow title="bash">
+```bash
+ping -c 4 google.com
+```
+</CodeWindow>
+
+## 36. ifconfig / ip — Network info
+
+<CodeWindow title="bash">
+```bash
+# modern
+ip addr
+# legacy
+ifconfig
+```
+</CodeWindow>
+
+## 37. ssh — Connect to remote servers
+
+<CodeWindow title="bash">
+```bash
+ssh user@server
+```
+</CodeWindow>
+
+## 38. scp — Securely copy files over SSH
+
+<CodeWindow title="bash">
+```bash
+scp file.txt user@server:/home/user/
+```
+</CodeWindow>
+
+## 39. sudo — Run command as root
+
+<CodeWindow title="bash">
+```bash
+sudo command
+```
+</CodeWindow>
+
+## 40. dpkg — Install .deb packages
+
+<CodeWindow title="bash">
+```bash
+sudo dpkg -i package.deb
+```
+</CodeWindow>
+
+## 41. uname — System info
+
+<CodeWindow title="bash">
+```bash
+uname -a
+```
+</CodeWindow>
+
+## 42. env — Show environment variables
+
+<CodeWindow title="bash">
+```bash
+env
+```
+</CodeWindow>
+
+## 43. export — Set environment variable
+
+<CodeWindow title="bash">
+```bash
+export PORT=3000
+```
+</CodeWindow>
+
+## 44. history — Show command history
+
+<CodeWindow title="bash">
+```bash
+history
+```
+</CodeWindow>
+
+## 45. clear — Clear the terminal
+
+<CodeWindow title="bash">
+```bash
+clear
+```
+</CodeWindow>
+
+## 46. mount — Mount filesystem
+
+<CodeWindow title="bash">
+```bash
+sudo mount /dev/sdb1 /mnt
+```
+</CodeWindow>
+
+## 47. umount — Unmount filesystem
+
+<CodeWindow title="bash">
+```bash
+sudo umount /mnt
+```
+</CodeWindow>
+
+## 48. reboot — Restart system
+
+<CodeWindow title="bash">
+```bash
+sudo reboot
+```
+</CodeWindow>
+
+## 49. shutdown — Power off system
+
+<CodeWindow title="bash">
+```bash
+sudo shutdown now
+```
+</CodeWindow>
+
+## 50. whoami — Show current user
+
+<CodeWindow title="bash">
+```bash
+whoami
+```
+</CodeWindow>
+
+---
+
+## 🎯 Conclusion
+These 50 Linux commands form the foundation of file management, process control, networking, system monitoring, and development workflows.
+
+Master them, and the Linux terminal becomes one of the most powerful tools at your fingertips.
