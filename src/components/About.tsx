@@ -6,10 +6,10 @@ import { motion } from "framer-motion";
 
 export default function About() {
   const images = [
-    "https://images.unsplash.com/photo-1692544350322-ac70cfd63614?auto=format&fit=crop&w=800&q=60",
-    "https://images.unsplash.com/photo-1692374227159-2d3592f274c9?auto=format&fit=crop&w=800&q=60",
-    "https://images.unsplash.com/photo-1692005561659-cdba32d1e4a1?auto=format&fit=crop&w=800&q=60",
-    "https://images.unsplash.com/photo-1692445381633-7999ebc03730?auto=format&fit=crop&w=800&q=60",
+    "/images/developer.png",
+    "/images/blockchain.png",
+    "/images/innovator.png",
+    "/images/devops.png",
   ];
 
   const highlights = [
