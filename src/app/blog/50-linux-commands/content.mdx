@@ -11,11 +11,9 @@ export const meta = {
 
 export default (props) => <BlogLayout meta={meta} {...props} />;
 
-# 🐧 50 Linux Commands You Should Know
+# 🐧 50 Essential Linux Commands
 
-A practical cheat-sheet for beginners, developers, DevOps engineers, and power users.
-
-Below is a clean, beginner-friendly list of **50 essential Linux commands**, each with a simple explanation and example.
+A comprehensive cheat-sheet organized by category for beginners, developers, DevOps engineers, and power users.
 
 <div className="my-8 flex justify-center">
   <img 
@@ -25,442 +23,820 @@ Below is a clean, beginner-friendly list of **50 essential Linux commands**, eac
   />
 </div>
 
+<div className="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 p-6 rounded-r-lg my-8">
+  <p className="text-lg font-semibold text-blue-900 dark:text-blue-300 mb-2">📚 Quick Navigation</p>
+  <div className="grid md:grid-cols-3 gap-2 text-sm text-black-700 dark:text-amber-400">
+    <span>📁 File Management</span>
+    <span>🔍 Search & Text</span>
+    <span>📦 Archives</span>
+    <span>🌐 Network</span>
+    <span>🔐 Permissions</span>
+    <span>⚙️ Processes</span>
+    <span>💾 Disk & Storage</span>
+    <span>📦 Packages</span>
+    <span>🔧 System</span>
+  </div>
+</div>
+
 ---
 
-## 1. ls — List files and directories
+## 📁 File & Directory Management
 
-Lists the contents of the current directory.
+### Command 1: ls
 
-<CodeWindow title="bash">
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">List Directory Contents</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Display files and directories in the current location.
+  </p>
+  <CodeWindow title="ls command">
 ```bash
 ls
+ls -la          # detailed list with hidden files
+ls -lh          # human-readable sizes
 ```
-</CodeWindow>
+  </CodeWindow>
+</div>
 
-## 2. cd — Change directory
+### Command 2: cd
 
-Move to another directory.
-
-<CodeWindow title="bash">
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Change Directory</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Navigate between directories in your filesystem.
+  </p>
+  <CodeWindow title="cd command">
 ```bash
-cd dir_name
+cd /home/user   # absolute path
+cd documents    # relative path
+cd ..           # go up one level
+cd ~            # go to home
 ```
-</CodeWindow>
+  </CodeWindow>
+</div>
 
-## 3. mkdir — Create a directory
+### Command 3: pwd
 
-Creates a new folder.
-
-<CodeWindow title="bash">
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Print Working Directory</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Show your current directory path.
+  </p>
+  <CodeWindow title="pwd command">
 ```bash
-mkdir devashish
+pwd
 ```
-</CodeWindow>
+  </CodeWindow>
+</div>
 
-## 4. rmdir — Remove an empty directory
+### Command 4: mkdir
 
-<CodeWindow title="bash">
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Create Directory</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Create new folders in your filesystem.
+  </p>
+  <CodeWindow title="mkdir command">
 ```bash
-rmdir folder_name
+mkdir project
+mkdir -p project/src/components
 ```
-</CodeWindow>
+  </CodeWindow>
+</div>
 
-## 5. rm — Remove files or directories
+### Command 5: rmdir
 
-Careful: can delete recursively with -r.
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Remove Empty Directory</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Delete an empty directory.
+  </p>
+  <CodeWindow title="rmdir command">
+```bash
+rmdir empty_folder
+```
+  </CodeWindow>
+</div>
 
-<CodeWindow title="bash">
+### Command 6: rm
+
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Remove Files/Directories</h4>
+  <div className="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-500 p-3 rounded-r mb-4">
+    <p className="text-sm text-red-800 dark:text-red-300">⚠️ Warning: Permanently deletes files!</p>
+  </div>
+  <CodeWindow title="rm command">
 ```bash
 rm file.txt
 rm -r folder_name
+rm -rf folder_name
 ```
-</CodeWindow>
+  </CodeWindow>
+</div>
 
-## 6. touch — Create an empty file
+### Command 7: cp
 
-<CodeWindow title="bash">
-```bash
-touch notes.txt
-```
-</CodeWindow>
-
-## 7. cat — View file contents
-
-<CodeWindow title="bash">
-```bash
-cat file.txt
-```
-</CodeWindow>
-
-## 8. nano — Edit a file in terminal
-
-Begin editing quickly in the terminal.
-
-<CodeWindow title="bash">
-```bash
-nano file.txt
-```
-</CodeWindow>
-
-## 9. vim — Advanced terminal editor
-
-Powerful editor for advanced users.
-
-<CodeWindow title="bash">
-```bash
-vim file.txt
-```
-</CodeWindow>
-
-## 10. cp — Copy files/folders
-
-<CodeWindow title="bash">
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Copy Files/Directories</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Copy files or directories to another location.
+  </p>
+  <CodeWindow title="cp command">
 ```bash
 cp source.txt destination.txt
 cp -r src/ backup/
 ```
-</CodeWindow>
+  </CodeWindow>
+</div>
 
-## 11. mv — Move or rename files
+### Command 8: mv
 
-<CodeWindow title="bash">
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Move/Rename Files</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Move files or rename them.
+  </p>
+  <CodeWindow title="mv command">
 ```bash
 mv old.txt new.txt
+mv file.txt /home/user/docs/
 ```
-</CodeWindow>
+  </CodeWindow>
+</div>
 
-## 12. pwd — Show current directory
+### Command 9: touch
 
-<CodeWindow title="bash">
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Create Empty File</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Create a new empty file or update timestamp.
+  </p>
+  <CodeWindow title="touch command">
 ```bash
-pwd
+touch notes.txt
+touch file1.txt file2.txt
 ```
-</CodeWindow>
+  </CodeWindow>
+</div>
 
-## 13. find — Search for files
+### Command 10: cat
 
-Search recursively for files by name.
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">View File Contents</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Display the contents of a file.
+  </p>
+  <CodeWindow title="cat command">
+```bash
+cat file.txt
+cat file1.txt file2.txt
+```
+  </CodeWindow>
+</div>
 
-<CodeWindow title="bash">
+---
+
+## ✏️ Text Editors
+
+### Command 11: nano
+
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Simple Text Editor</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    User-friendly terminal text editor.
+  </p>
+  <CodeWindow title="nano command">
+```bash
+nano file.txt
+```
+  </CodeWindow>
+</div>
+
+### Command 12: vim
+
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Advanced Text Editor</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Powerful terminal text editor.
+  </p>
+  <CodeWindow title="vim command">
+```bash
+vim file.txt
+```
+  </CodeWindow>
+</div>
+
+---
+
+## 🔍 Search & Text Processing
+
+### Command 13: find
+
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Search for Files</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Search for files and directories by name.
+  </p>
+  <CodeWindow title="find command">
 ```bash
 find /home -name "file.txt"
+find . -type f -name "*.js"
 ```
-</CodeWindow>
+  </CodeWindow>
+</div>
 
-## 14. grep — Search inside files
+### Command 14: grep
 
-Search for text patterns inside files.
-
-<CodeWindow title="bash">
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Search Inside Files</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Search for text patterns inside files.
+  </p>
+  <CodeWindow title="grep command">
 ```bash
 grep "keyword" file.txt
+grep -r "search" /directory/
+grep -i "case insensitive" file.txt
 ```
-</CodeWindow>
+  </CodeWindow>
+</div>
 
-## 15. tar — Create/extract archives
+### Command 15: echo
 
-<CodeWindow title="bash">
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Print Text</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Display text or write to files.
+  </p>
+  <CodeWindow title="echo command">
 ```bash
-# create
+echo "Hello, World!"
+echo $PATH
+```
+  </CodeWindow>
+</div>
+
+---
+
+## 📦 Archives & Compression
+
+### Command 16: tar
+
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Archive Files</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Create or extract archive files.
+  </p>
+  <CodeWindow title="tar command">
+```bash
 tar -czf archive.tar.gz folder/
-# extract
 tar -xzf archive.tar.gz
 ```
-</CodeWindow>
+  </CodeWindow>
+</div>
 
-## 16. zip / unzip — Compress / extract zip files
+### Command 17: zip/unzip
 
-<CodeWindow title="bash">
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Zip Compression</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Compress and decompress .zip files.
+  </p>
+  <CodeWindow title="zip command">
 ```bash
-zip file.zip folder/
-unzip file.zip
+zip -r archive.zip folder/
+unzip archive.zip
 ```
-</CodeWindow>
+  </CodeWindow>
+</div>
 
-## 17. wget — Download a file
+---
 
-<CodeWindow title="bash">
+## 🌐 Network & Downloads
+
+### Command 18: wget
+
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Download Files</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Download files from the internet.
+  </p>
+  <CodeWindow title="wget command">
 ```bash
 wget https://example.com/file.zip
 ```
-</CodeWindow>
+  </CodeWindow>
+</div>
 
-## 18. curl — Fetch data from the internet
+### Command 19: curl
 
-Useful for quick HTTP requests.
-
-<CodeWindow title="bash">
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Transfer Data</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Transfer data from servers.
+  </p>
+  <CodeWindow title="curl command">
 ```bash
 curl https://api.example.com
+curl -O https://example.com/file.zip
 ```
-</CodeWindow>
+  </CodeWindow>
+</div>
 
-## 19. chmod — Change file permissions
+### Command 20: ping
 
-<CodeWindow title="bash">
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Test Connectivity</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Check network connection to a host.
+  </p>
+  <CodeWindow title="ping command">
+```bash
+ping google.com
+ping -c 4 google.com
+```
+  </CodeWindow>
+</div>
+
+### Command 21: ssh
+
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Secure Shell</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Connect to remote servers securely.
+  </p>
+  <CodeWindow title="ssh command">
+```bash
+ssh user@server.com
+ssh -p 2222 user@server.com
+```
+  </CodeWindow>
+</div>
+
+### Command 22: scp
+
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Secure Copy</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Copy files between systems over SSH.
+  </p>
+  <CodeWindow title="scp command">
+```bash
+scp file.txt user@server:/home/user/
+scp -r folder/ user@server:/backup/
+```
+  </CodeWindow>
+</div>
+
+### Command 23: ifconfig/ip
+
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Network Configuration</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    View network interfaces.
+  </p>
+  <CodeWindow title="ip command">
+```bash
+ip addr
+ifconfig
+```
+  </CodeWindow>
+</div>
+
+### Command 24: hostname
+
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Show System Name</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Display system hostname.
+  </p>
+  <CodeWindow title="hostname command">
+```bash
+hostname
+hostname -I
+```
+  </CodeWindow>
+</div>
+
+---
+
+## 🔐 Permissions & Ownership
+
+### Command 25: chmod
+
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Change Permissions</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Modify file permissions.
+  </p>
+  <CodeWindow title="chmod command">
 ```bash
 chmod +x script.sh
+chmod 755 script.sh
+chmod -R 644 folder/
 ```
-</CodeWindow>
+  </CodeWindow>
+</div>
 
-## 20. chown — Change file ownership
+### Command 26: chown
 
-<CodeWindow title="bash">
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Change Ownership</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Change file owner and group.
+  </p>
+  <CodeWindow title="chown command">
 ```bash
-sudo chown user:user file.txt
+sudo chown user:group file.txt
+sudo chown -R user:group folder/
 ```
-</CodeWindow>
+  </CodeWindow>
+</div>
 
-## 21. ps — View running processes
+### Command 27: sudo
 
-<CodeWindow title="bash">
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Execute as Superuser</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Run commands with admin privileges.
+  </p>
+  <CodeWindow title="sudo command">
+```bash
+sudo command
+sudo -i
+```
+  </CodeWindow>
+</div>
+
+---
+
+## ⚙️ Process Management
+
+### Command 28: ps
+
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">List Processes</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Display running processes.
+  </p>
+  <CodeWindow title="ps command">
 ```bash
 ps aux
+ps aux | grep nginx
 ```
-</CodeWindow>
+  </CodeWindow>
+</div>
 
-## 22. kill — Stop a process
+### Command 29: top
 
-<CodeWindow title="bash">
-```bash
-kill PID
-kill -9 PID
-```
-</CodeWindow>
-
-## 23. top — Real-time system activity
-
-<CodeWindow title="bash">
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Process Monitor</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Real-time process viewer.
+  </p>
+  <CodeWindow title="top command">
 ```bash
 top
 ```
-</CodeWindow>
+  </CodeWindow>
+</div>
 
-## 24. htop — Better version of top
+### Command 30: htop
 
-(If installed.)
-
-<CodeWindow title="bash">
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Enhanced Process Viewer</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Interactive process monitor.
+  </p>
+  <CodeWindow title="htop command">
 ```bash
 htop
 ```
-</CodeWindow>
+  </CodeWindow>
+</div>
 
-## 25. df — Disk usage
+### Command 31: kill
 
-<CodeWindow title="bash">
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Terminate Process</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Stop a running process.
+  </p>
+  <CodeWindow title="kill command">
+```bash
+kill PID
+kill -9 PID
+killall process_name
+```
+  </CodeWindow>
+</div>
+
+---
+
+## 💾 Disk & Storage
+
+### Command 32: df
+
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Disk Space Usage</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Show filesystem disk space.
+  </p>
+  <CodeWindow title="df command">
 ```bash
 df -h
+df -h /home
 ```
-</CodeWindow>
+  </CodeWindow>
+</div>
 
-## 26. du — Directory size
+### Command 33: du
 
-<CodeWindow title="bash">
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Directory Size</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Estimate file space usage.
+  </p>
+  <CodeWindow title="du command">
 ```bash
 du -sh folder/
+du -h --max-depth=1
 ```
-</CodeWindow>
+  </CodeWindow>
+</div>
 
-## 27. echo — Print text
+### Command 34: mount
 
-<CodeWindow title="bash">
-```bash
-echo "Hello, World!"
-```
-</CodeWindow>
-
-## 28. man — Show command manual
-
-<CodeWindow title="bash">
-```bash
-man ls
-```
-</CodeWindow>
-
-## 29. apt update — Update package list (Debian/Ubuntu)
-
-<CodeWindow title="bash">
-```bash
-sudo apt update
-```
-</CodeWindow>
-
-## 30. apt install — Install packages (Debian/Ubuntu)
-
-<CodeWindow title="bash">
-```bash
-sudo apt install nginx
-```
-</CodeWindow>
-
-## 31. yum install — Install packages (CentOS/RHEL)
-
-<CodeWindow title="bash">
-```bash
-sudo yum install git
-```
-</CodeWindow>
-
-## 32. systemctl — Manage services
-
-<CodeWindow title="bash">
-```bash
-sudo systemctl status nginx
-sudo systemctl restart nginx
-```
-</CodeWindow>
-
-## 33. service — Legacy service manager
-
-<CodeWindow title="bash">
-```bash
-sudo service ssh start
-```
-</CodeWindow>
-
-## 34. hostname — Show system hostname
-
-<CodeWindow title="bash">
-```bash
-hostname
-```
-</CodeWindow>
-
-## 35. ping — Test internet / host connectivity
-
-<CodeWindow title="bash">
-```bash
-ping -c 4 google.com
-```
-</CodeWindow>
-
-## 36. ifconfig / ip — Network info
-
-<CodeWindow title="bash">
-```bash
-# modern
-ip addr
-# legacy
-ifconfig
-```
-</CodeWindow>
-
-## 37. ssh — Connect to remote servers
-
-<CodeWindow title="bash">
-```bash
-ssh user@server
-```
-</CodeWindow>
-
-## 38. scp — Securely copy files over SSH
-
-<CodeWindow title="bash">
-```bash
-scp file.txt user@server:/home/user/
-```
-</CodeWindow>
-
-## 39. sudo — Run command as root
-
-<CodeWindow title="bash">
-```bash
-sudo command
-```
-</CodeWindow>
-
-## 40. dpkg — Install .deb packages
-
-<CodeWindow title="bash">
-```bash
-sudo dpkg -i package.deb
-```
-</CodeWindow>
-
-## 41. uname — System info
-
-<CodeWindow title="bash">
-```bash
-uname -a
-```
-</CodeWindow>
-
-## 42. env — Show environment variables
-
-<CodeWindow title="bash">
-```bash
-env
-```
-</CodeWindow>
-
-## 43. export — Set environment variable
-
-<CodeWindow title="bash">
-```bash
-export PORT=3000
-```
-</CodeWindow>
-
-## 44. history — Show command history
-
-<CodeWindow title="bash">
-```bash
-history
-```
-</CodeWindow>
-
-## 45. clear — Clear the terminal
-
-<CodeWindow title="bash">
-```bash
-clear
-```
-</CodeWindow>
-
-## 46. mount — Mount filesystem
-
-<CodeWindow title="bash">
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Mount Filesystem</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Attach filesystem.
+  </p>
+  <CodeWindow title="mount command">
 ```bash
 sudo mount /dev/sdb1 /mnt
+mount
 ```
-</CodeWindow>
+  </CodeWindow>
+</div>
 
-## 47. umount — Unmount filesystem
+### Command 35: umount
 
-<CodeWindow title="bash">
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Unmount Filesystem</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Detach mounted filesystem.
+  </p>
+  <CodeWindow title="umount command">
 ```bash
 sudo umount /mnt
 ```
-</CodeWindow>
+  </CodeWindow>
+</div>
 
-## 48. reboot — Restart system
+---
 
-<CodeWindow title="bash">
+## 📦 Package Management
+
+### Command 36: apt update
+
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Update Package List</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Refresh available packages (Debian/Ubuntu).
+  </p>
+  <CodeWindow title="apt update">
+```bash
+sudo apt update
+```
+  </CodeWindow>
+</div>
+
+### Command 37: apt install
+
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Install Packages</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Install software (Debian/Ubuntu).
+  </p>
+  <CodeWindow title="apt install">
+```bash
+sudo apt install nginx
+sudo apt install -y package
+```
+  </CodeWindow>
+</div>
+
+### Command 38: yum install
+
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Install Packages (RHEL)</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Install packages (CentOS/RHEL).
+  </p>
+  <CodeWindow title="yum install">
+```bash
+sudo yum install git
+```
+  </CodeWindow>
+</div>
+
+### Command 39: dpkg
+
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Debian Package Manager</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Install .deb files.
+  </p>
+  <CodeWindow title="dpkg">
+```bash
+sudo dpkg -i package.deb
+dpkg -l
+```
+  </CodeWindow>
+</div>
+
+---
+
+## 🔧 System Management
+
+### Command 40: systemctl
+
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">System Control</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Manage system services.
+  </p>
+  <CodeWindow title="systemctl">
+```bash
+sudo systemctl status nginx
+sudo systemctl start nginx
+sudo systemctl restart nginx
+sudo systemctl enable nginx
+```
+  </CodeWindow>
+</div>
+
+### Command 41: service
+
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Service Manager (Legacy)</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Manage services (older systems).
+  </p>
+  <CodeWindow title="service">
+```bash
+sudo service ssh start
+```
+  </CodeWindow>
+</div>
+
+### Command 42: uname
+
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">System Information</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Display system info.
+  </p>
+  <CodeWindow title="uname">
+```bash
+uname -a
+uname -r
+```
+  </CodeWindow>
+</div>
+
+### Command 43: reboot
+
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Restart System</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Restart the computer.
+  </p>
+  <CodeWindow title="reboot">
 ```bash
 sudo reboot
 ```
-</CodeWindow>
+  </CodeWindow>
+</div>
 
-## 49. shutdown — Power off system
+### Command 44: shutdown
 
-<CodeWindow title="bash">
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Power Off System</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Shut down safely.
+  </p>
+  <CodeWindow title="shutdown">
 ```bash
 sudo shutdown now
+sudo shutdown +10
 ```
-</CodeWindow>
+  </CodeWindow>
+</div>
 
-## 50. whoami — Show current user
+---
 
-<CodeWindow title="bash">
+## 🔑 Environment & Shell
+
+### Command 45: env
+
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Show Environment Variables</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Display environment variables.
+  </p>
+  <CodeWindow title="env">
+```bash
+env
+env | grep PATH
+```
+  </CodeWindow>
+</div>
+
+### Command 46: export
+
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Set Environment Variable</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Create environment variables.
+  </p>
+  <CodeWindow title="export">
+```bash
+export PORT=3000
+export PATH=$PATH:/new/path
+```
+  </CodeWindow>
+</div>
+
+### Command 47: history
+
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Command History</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Show previous commands.
+  </p>
+  <CodeWindow title="history">
+```bash
+history
+history 20
+```
+  </CodeWindow>
+</div>
+
+### Command 48: clear
+
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Clear Terminal</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Clear screen.
+  </p>
+  <CodeWindow title="clear">
+```bash
+clear
+```
+  </CodeWindow>
+</div>
+
+### Command 49: whoami
+
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Current User</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Display current username.
+  </p>
+  <CodeWindow title="whoami">
 ```bash
 whoami
 ```
-</CodeWindow>
+  </CodeWindow>
+</div>
+
+### Command 50: man
+
+<div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700 my-6">
+  <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Manual Pages</h4>
+  <p className="text-gray-700 dark:text-gray-300 mb-4">
+    Access command documentation.
+  </p>
+  <CodeWindow title="man">
+```bash
+man ls
+man grep
+```
+  </CodeWindow>
+</div>
 
 ---
 
 ## 🎯 Conclusion
-These 50 Linux commands form the foundation of file management, process control, networking, system monitoring, and development workflows.
 
-Master them, and the Linux terminal becomes one of the most powerful tools at your fingertips.
+<div className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white rounded-xl p-8 my-8">
+  <h3 className="text-2xl font-bold mb-4">Master the Command Line! 🚀</h3>
+  <p className="text-lg mb-4">
+    These 50 Linux commands form the foundation of system administration, development workflows, and DevOps operations.
+  </p>
+  <p className="text-base opacity-90">
+    Practice regularly and use the man command to learn more about each tool!
+  </p>
+</div>
