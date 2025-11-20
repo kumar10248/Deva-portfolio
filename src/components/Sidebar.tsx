@@ -166,9 +166,9 @@ const SidebarHeader = () => {
           <Image
             src={profileimage}
             alt="Avatar"
-            height="48"
-            width="48"
-            className="object-cover object-top rounded-full flex-shrink-0 ring-2 ring-white dark:ring-gray-800 shadow-md"
+            height="60"
+            width="60"
+            className="object-cover object-top rounded-full flex-shrink-0 ring-2 ring-white dark:ring-gray-800 shadow-md aspect-square"
           />
           <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-white dark:border-gray-800"></span>
         </div>
