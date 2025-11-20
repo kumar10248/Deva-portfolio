@@ -33,5 +33,10 @@ export const socials = [
     label: "GitHub",
     icon: IconBrandGithub,
   },
+  {
+    href:"https://www.facebook.com/profile.php?id=100082058446228",
+    label:"Facebook",
+    icon:IconBrandFacebook
+  }
   
 ];
