@@ -52,13 +52,13 @@ export function BlogLayout({
               {formatDate(meta.date)}
             </Paragraph>
           </time>
-          <div className="w-full mt-3 md:mt-4 aspect-w-16 aspect-h-10 bg-gray-100 dark:bg-gray-800 rounded-lg md:rounded-xl overflow-hidden xl:aspect-w-16 xl:aspect-h-10 relative shadow-lg mobile-safe">
+          <div className="w-full mt-3 md:mt-4 bg-gray-100 dark:bg-gray-800 rounded-lg md:rounded-xl overflow-hidden shadow-lg mobile-safe">
             <Image
               src={meta.image}
               alt="thumbnail"
-              height="800"
-              width="800"
-              className={`object-cover object-left-top w-full max-h-64 md:max-h-96`}
+              height="900"
+              width="900"
+              className={`object-cover w-full h-auto max-h-48 sm:max-h-56 md:max-h-72 lg:max-h-80`}
             />
           </div>
         </header>
