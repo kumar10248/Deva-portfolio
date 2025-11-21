@@ -172,7 +172,7 @@ export function BlogLayout({
               alt="thumbnail"
               height="900"
               width="900"
-              className={`object-cover w-full h-auto max-h-48 sm:max-h-56 md:max-h-72 lg:max-h-80`}
+              className="w-full h-auto object-contain"
             />
           </div>
         </header>
