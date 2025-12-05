@@ -1,0 +1,422 @@
+import { BlogLayout } from "@/components/BlogLayout";
+import { CodeWindow } from "@/components/CodeWindow";
+
+export const meta = {
+  date: "2025-12-06",
+  title: "Learning Linux Essentials — A Practical Journey",
+  description: "How I went from a curious beginner to a confident Linux user through practical experience and hands-on learning.",
+  image: "/images/linux-essential.png",
+  tags: ["Linux", "Learning", "Tutorial", "Development", "Journey"]
+};
+
+export default (props) => <BlogLayout meta={meta} {...props} />;
+
+# Learning Linux Essentials — A Practical Journey
+
+How I went from a curious beginner to a confident Linux user.
+
+---
+
+## 🐧 Introduction
+
+When I first started using Linux, everything felt unfamiliar — the terminal, the file system, the permissions, even the installation process.
+
+But day by day, command by command, Linux went from something "technical" to something **empowering**.
+
+This article is my practical journey — the steps I took, the concepts I learned, and the skills that made me comfortable using Linux for development, automation, cybersecurity, and daily work.
+
+**If you're beginning your own journey, consider this your roadmap.**
+
+---
+
+## ⭐ 1. Why I Chose to Learn Linux
+
+Before diving in, I asked myself: **Why Linux?**
+
+And very quickly I learned:
+
+- 🔥 **Developers rely on Linux**
+- 🐳 **Docker containers run on Linux**
+- ☁️ **Cloud platforms (AWS, GCP, Azure) are Linux-based**
+- 🔐 **Cybersecurity tools live on Linux**
+- 🧠 **Linux teaches you how computers really work**
+
+**Linux isn't just an OS — it's a superpower.**
+
+---
+
+## 🛠 2. Choosing My First Linux Distro
+
+My journey began with picking a distribution.
+
+**For beginners, the best choices are:**
+
+- **Ubuntu LTS** → Easy, stable, perfect for learning
+- **Linux Mint** → Windows-like UI
+- **Pop!_OS** → Great for programming/GPU work
+- **Fedora** → Modern & polished
+
+I chose **Ubuntu 22.04** → later upgraded to 24.04, and it was the perfect starting point.
+
+---
+
+## 💽 3. Installing Linux — My Experience
+
+I experimented with all three installation methods.
+
+### ✔ Virtual Machine (First Try)
+
+Using VirtualBox, I explored Linux safely, with zero risk.
+
+### ✔ Dual Boot (Next Step)
+
+I installed Ubuntu alongside Windows, switching OS at boot time.
+
+### ✔ Full Linux Installation (Final Step)
+
+I eventually erased Windows and went Linux-only, which made my system **faster, cleaner, and more stable**.
+
+---
+
+## 🖥 4. Understanding the Linux Desktop
+
+The Linux UI was simple:
+
+- **Top bar** → settings
+- **Launcher/Dock** → quick apps
+- **Files** → file manager
+- **Terminal** → the heart of Linux
+
+At first, I feared the terminal.  
+Soon, I preferred it.
+
+---
+
+## 🧑‍💻 5. Learning the Essential Linux Commands
+
+This was the turning point.
+
+### 📁 Navigation
+
+<CodeWindow>
+```bash
+pwd
+ls
+cd folder/
+cd ..
+```
+</CodeWindow>
+
+### 📄 File Operations
+
+<CodeWindow>
+```bash
+touch file.txt
+mkdir folder
+cp a.txt b.txt
+mv a.txt folder/
+rm file.txt
+rm -r folder/
+```
+</CodeWindow>
+
+### 📦 Package Management
+
+<CodeWindow>
+```bash
+sudo apt update
+sudo apt upgrade
+sudo apt install git
+```
+</CodeWindow>
+
+### 📝 Editing Files
+
+<CodeWindow>
+```bash
+nano file.txt
+cat file.txt
+less file.txt
+```
+</CodeWindow>
+
+**Mastering these commands immediately boosted my confidence.**
+
+---
+
+## 🗂 6. Understanding the Linux File System
+
+One of the first "aha!" moments was understanding the directory structure:
+
+<div className="overflow-x-auto my-6">
+  <table className="w-full border-collapse">
+    <thead>
+      <tr className="bg-blue-100 dark:bg-blue-900/40">
+        <th className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-left text-gray-900 dark:text-white">Directory</th>
+        <th className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-left text-gray-900 dark:text-white">Purpose</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 font-mono text-gray-900 dark:text-white">/home</td>
+        <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-800 dark:text-gray-200">My personal files</td>
+      </tr>
+      <tr className="bg-gray-50 dark:bg-gray-800/50">
+        <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 font-mono text-gray-900 dark:text-white">/etc</td>
+        <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-800 dark:text-gray-200">System configuration</td>
+      </tr>
+      <tr>
+        <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 font-mono text-gray-900 dark:text-white">/var/log</td>
+        <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-800 dark:text-gray-200">Logs</td>
+      </tr>
+      <tr className="bg-gray-50 dark:bg-gray-800/50">
+        <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 font-mono text-gray-900 dark:text-white">/bin & /usr/bin</td>
+        <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-800 dark:text-gray-200">Commands and executables</td>
+      </tr>
+      <tr>
+        <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 font-mono text-gray-900 dark:text-white">/tmp</td>
+        <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-800 dark:text-gray-200">Temporary files</td>
+      </tr>
+      <tr className="bg-gray-50 dark:bg-gray-800/50">
+        <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 font-mono text-gray-900 dark:text-white">/root</td>
+        <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-800 dark:text-gray-200">Root's home directory</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+**Linux suddenly felt logical, not scary.**
+
+---
+
+## ⚙️ 7. Customizing Linux to Feel Like Home
+
+I installed:
+
+<CodeWindow>
+```bash
+sudo apt install gnome-tweaks
+sudo apt install gnome-shell-extensions
+```
+</CodeWindow>
+
+Then explored:
+
+- **Dark mode** 🌙
+- **Icon themes** 🎨
+- **Custom keyboard shortcuts**
+- **Extensions for productivity**
+
+**Linux became my system.**
+
+---
+
+## 🔧 8. Setting Up Linux for Development
+
+This was where Linux truly shined.
+
+### ✔ Git
+
+<CodeWindow>
+```bash
+sudo apt install git
+```
+</CodeWindow>
+
+### ✔ Node.js
+
+<CodeWindow>
+```bash
+sudo apt install nodejs npm
+```
+</CodeWindow>
+
+### ✔ Python
+
+<CodeWindow>
+```bash
+sudo apt install python3 python3-pip
+```
+</CodeWindow>
+
+### ✔ Java
+
+<CodeWindow>
+```bash
+sudo apt install openjdk-17-jdk
+```
+</CodeWindow>
+
+### ✔ Docker
+
+<CodeWindow>
+```bash
+sudo apt install docker.io
+sudo usermod -aG docker $USER
+```
+</CodeWindow>
+
+**Everything installed faster and worked smoother on Linux compared to Windows.**
+
+---
+
+## 🌐 9. Networking Basics I Learned
+
+Linux gave me full control:
+
+<CodeWindow>
+```bash
+hostname -I              # Show IP
+ping google.com          # Check internet
+ip a                     # Show interfaces
+ssh user@server          # Remote login
+scp file server:/path    # Copy securely
+```
+</CodeWindow>
+
+**Networking, which once felt "advanced," became intuitive.**
+
+---
+
+## 🔐 10. Permissions & Security — A Key Milestone
+
+This was one of the most important concepts I learned.
+
+**Permissions:**
+- `r` = read
+- `w` = write
+- `x` = execute
+
+**Change permissions:**
+
+<CodeWindow>
+```bash
+chmod 755 script.sh
+```
+</CodeWindow>
+
+**Change ownership:**
+
+<CodeWindow>
+```bash
+sudo chown user:user file
+```
+</CodeWindow>
+
+**This knowledge is essential for DevOps, cloud, and cybersecurity work.**
+
+---
+
+## 🧵 11. My First Shell Script
+
+This was the moment Linux "clicked."
+
+<CodeWindow>
+```bash
+nano hello.sh
+```
+</CodeWindow>
+
+**Inside:**
+
+<CodeWindow>
+```bash
+#!/bin/bash
+echo "Hello Linux!"
+```
+</CodeWindow>
+
+**Run it:**
+
+<CodeWindow>
+```bash
+chmod +x hello.sh
+./hello.sh
+```
+</CodeWindow>
+
+**Suddenly, I understood automation — something every Linux user should learn.**
+
+---
+
+## 🔧 12. Troubleshooting — The Real Learning
+
+Linux taught me to fix my own issues:
+
+**GUI restart:**
+
+<CodeWindow>
+```bash
+sudo systemctl restart gdm3
+```
+</CodeWindow>
+
+**Wi-Fi fix:**
+
+<CodeWindow>
+```bash
+sudo systemctl restart NetworkManager
+```
+</CodeWindow>
+
+**Broken updates:**
+
+<CodeWindow>
+```bash
+sudo apt --fix-broken install
+```
+</CodeWindow>
+
+**Linux makes you a better problem-solver.**
+
+---
+
+## 🚀 13. What I Learned Next
+
+Once I mastered the basics, I explored:
+
+- ✅ Shell scripting
+- ✅ Cron automation
+- ✅ SSH configuration
+- ✅ Containers & Docker
+- ✅ GitHub workflows
+- ✅ Systemd services
+- ✅ Firewall configuration
+- ✅ DevOps & CI/CD basics
+
+**Linux opened the door to real-world engineering skills.**
+
+---
+
+## 🎯 Final Thoughts
+
+Learning Linux wasn't just about commands — **it changed how I think**.
+
+**Linux taught me:**
+
+- ✅ How systems work under the hood
+- ✅ How to automate tasks
+- ✅ How to debug intelligently
+- ✅ How to manage servers
+- ✅ How to become a more capable developer
+
+Today, Linux is not just an operating system for me.
+
+> 👉 **It's a core skill that powers everything I build.**  
+> 👉 **It's a mindset of control, clarity, and confidence.**
+
+If you're starting your own Linux journey — enjoy it.
+
+**It's one of the most valuable skills you will ever learn.**
+
+---
+
+## 📚 Resources That Helped Me
+
+- [Ubuntu Documentation](https://help.ubuntu.com/)
+- [Linux Journey](https://linuxjourney.com/)
+- [OverTheWire (Linux practice)](https://overthewire.org/)
+- [Explain Shell](https://explainshell.com/)
+- r/linuxquestions (Reddit community)
+
+**Happy Learning! 🐧**

@@ -1,0 +1,361 @@
+import { BlogLayout } from "@/components/BlogLayout";
+import { CodeWindow } from "@/components/CodeWindow";
+
+export const meta = {
+  date: "2025-12-06",
+  title: "How I Learned GPG Encryption for Secure Secrets Management on Linux",
+  description: "A practical, beginner-friendly guide to protecting sensitive files using GnuPG encryption.",
+  image: "/images/gpg-encryption.png",
+  tags: ["GPG", "Security", "Linux", "Encryption", "DevOps"]
+};
+
+export default (props) => <BlogLayout meta={meta} {...props} />;
+
+# How I Learned GPG Encryption for Secure Secrets Management on Linux
+
+A practical, beginner-friendly guide to protecting sensitive files using GnuPG.
+
+---
+
+## 🛡️ Introduction: Why I Learned GPG
+
+Secrets are everywhere in development:
+
+- API keys
+- Tokens
+- Database credentials
+- SSH keys
+- Config files
+
+When I started working more seriously on Linux, I realized something important:
+
+**Storing secrets in plain text is the easiest mistake a developer can make.**
+
+I wanted a better way — something secure, offline, open-source, and trusted by the Linux ecosystem.
+
+That's when I learned **GPG (GNU Privacy Guard)**.
+
+It's powerful, simple once understood, and perfect for anyone managing sensitive files.
+
+This article explains exactly how I learned GPG and how you can start using it today.
+
+---
+
+## 🔐 What is GPG?
+
+**GPG (GnuPG)** is an open-source encryption tool based on the OpenPGP standard.
+
+It lets you:
+
+- Encrypt files
+- Decrypt files
+- Sign documents
+- Generate key pairs
+- Verify authenticity
+
+It is widely used for:
+
+- Secure file sharing
+- Package verification
+- Git commit signing
+- Secrets management
+- Email encryption
+
+**In short, GPG = military-grade encryption built into Linux for free.**
+
+---
+
+## 🧭 My Learning Journey (Step-by-Step)
+
+Here's the exact path I followed to understand GPG clearly and practically.
+
+### ⭐ Step 1 — Understanding Key Pairs
+
+GPG uses two keys:
+
+| Key | Purpose |
+|-----|---------|
+| **Public Key** | Used to encrypt files (safe to share) |
+| **Private Key** | Used to decrypt files (must be protected) |
+
+This simple model clicked instantly:
+
+**Anyone can encrypt secrets for you → only you can decrypt them.**
+
+---
+
+### ⭐ Step 2 — Generating My First GPG Key
+
+I generated a new key pair with one command:
+
+<CodeWindow>
+```bash
+gpg --full-generate-key
+```
+</CodeWindow>
+
+GPG asked me:
+
+- **key type** → RSA
+- **key size** → 4096 bits (recommended)
+- **expiration** → 1–2 years
+- **name & email**
+- **passphrase** (important!)
+
+Then I confirmed using:
+
+<CodeWindow>
+```bash
+gpg --list-keys
+gpg --list-secret-keys
+```
+</CodeWindow>
+
+Seeing my first key felt like a milestone — **I was officially using proper encryption.**
+
+---
+
+### ⭐ Step 3 — Encrypting a File
+
+To encrypt a secrets file:
+
+<CodeWindow>
+```bash
+gpg --encrypt --recipient "your-email@example.com" secret.txt
+```
+</CodeWindow>
+
+This generated:
+
+```
+secret.txt.gpg
+```
+
+**Even if someone stole this file, it was completely unreadable without my private key.**
+
+---
+
+### ⭐ Step 4 — Decrypting the File
+
+This is where the magic clicked for me:
+
+<CodeWindow>
+```bash
+gpg --decrypt secret.txt.gpg > secret.txt
+```
+</CodeWindow>
+
+GPG asked for my private key passphrase, and only then decrypted it.
+
+**At this moment, I understood why GPG is considered zero-trust secure.**
+
+---
+
+### ⭐ Step 5 — Learning Symmetric Encryption
+
+Sometimes I just needed quick encryption without key pairs.
+
+So I tried:
+
+<CodeWindow>
+```bash
+gpg --symmetric secret.txt
+```
+</CodeWindow>
+
+This created `secret.txt.gpg` protected using a password I chose.
+
+To decrypt:
+
+<CodeWindow>
+```bash
+gpg --decrypt secret.txt.gpg
+```
+</CodeWindow>
+
+This is incredibly useful for:
+
+- Personal notes
+- Environment variables
+- `.env` backups
+- Small scripts
+
+---
+
+### ⭐ Step 6 — Exporting & Sharing My Public Key
+
+To let teammates encrypt files for me, I exported my public key:
+
+<CodeWindow>
+```bash
+gpg --armor --export your-email@example.com > mypubkey.asc
+```
+</CodeWindow>
+
+This file can be safely shared.
+
+They import it with:
+
+<CodeWindow>
+```bash
+gpg --import mypubkey.asc
+```
+</CodeWindow>
+
+**This step taught me how collaborative secure encryption works.**
+
+---
+
+### ⭐ Step 7 — Creating a Revocation Certificate
+
+If I ever lose my key, I must be able to revoke it.
+
+I created one immediately:
+
+<CodeWindow>
+```bash
+gpg --output revoke.asc --gen-revoke your-email@example.com
+```
+</CodeWindow>
+
+I store this offline — **it's like a "panic button".**
+
+---
+
+### ⭐ Step 8 — Integrating GPG into Real Workflows
+
+Once I felt confident, I started using GPG for:
+
+#### ✔ Secrets storage
+
+Encrypt `.env` files:
+
+<CodeWindow>
+```bash
+gpg -c .env
+```
+</CodeWindow>
+
+#### ✔ Secure backups
+
+Archive + encrypt:
+
+<CodeWindow>
+```bash
+tar -czf secrets.tar.gz secrets/
+gpg -c secrets.tar.gz
+```
+</CodeWindow>
+
+#### ✔ Git commit signing
+
+<CodeWindow>
+```bash
+git config --global user.signingkey <key-id>
+git config --global commit.gpgsign true
+```
+</CodeWindow>
+
+**This taught me practical, real-world security habits.**
+
+---
+
+## 🧠 What GPG Taught Me About Security
+
+Learning GPG changed the way I handle sensitive data.
+
+I realized:
+
+- ✅ Encryption is easy
+- ✅ Secrets must never be stored in plaintext
+- ✅ Private keys must always be protected
+- ✅ Backups should be encrypted
+- ✅ Secure workflows matter more than tools
+
+**GPG became a core part of my Linux toolkit.**
+
+---
+
+## 🛡 Best Practices I Learned
+
+### ✔ Always use a strong passphrase
+
+Your private key is only as secure as your password.
+
+### ✔ Keep your private key safe
+
+Never upload it to GitHub or cloud storage.
+
+### ✔ Backup your keys
+
+Store them offline (USB / encrypted drive).
+
+### ✔ Use .gpg for environment files
+
+Especially when sharing config with teammates.
+
+### ✔ Use symmetric encryption for personal files
+
+Fast, simple, secure.
+
+---
+
+## 🎯 Final Thoughts: Why Learning GPG Matters
+
+Learning GPG gave me:
+
+- ✅ A deeper understanding of encryption
+- ✅ More confidence managing sensitive data
+- ✅ Secure workflows for my Linux projects
+- ✅ Professional DevOps-level skills
+- ✅ Peace of mind while storing backups & secrets
+
+**GPG isn't just a tool — it's a mindset.**
+
+It teaches you to protect your data, respect security, and work like a professional.
+
+If you're learning Linux or development, **GPG is a skill you should absolutely master.**
+
+---
+
+**Quick Reference Commands:**
+
+<CodeWindow>
+```bash
+# Generate key pair
+gpg --full-generate-key
+
+# List keys
+gpg --list-keys
+gpg --list-secret-keys
+
+# Encrypt file
+gpg --encrypt --recipient "email@example.com" file.txt
+
+# Decrypt file
+gpg --decrypt file.txt.gpg > file.txt
+
+# Symmetric encryption
+gpg --symmetric file.txt
+
+# Export public key
+gpg --armor --export email@example.com > public.asc
+
+# Import public key
+gpg --import public.asc
+
+# Generate revocation certificate
+gpg --output revoke.asc --gen-revoke email@example.com
+
+# Sign Git commits
+git config --global user.signingkey <key-id>
+git config --global commit.gpgsign true
+```
+</CodeWindow>
+
+**Resources:**
+- [GnuPG Official Documentation](https://gnupg.org/documentation/)
+- [GPG Cheat Sheet](https://devhints.io/gnupg)
+- [ProtonMail GPG Guide](https://proton.me/support/pgp-encryption)
+
+Stay secure! 🛡️🔐
