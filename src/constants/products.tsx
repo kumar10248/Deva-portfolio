@@ -12,6 +12,10 @@ import plotbot from "public/images/plotbot.png";
 import cuisineExplorer from "public/images/mealpic.png"
 import calculator from "public/images/calculator.png"
 import jsApp from "public/images/js.png"
+import kataSweet from "public/images/kata-sweet.png"
+import sweet1 from "public/images/kata-sweet-1.png"
+import sweet2 from "public/images/kata-sweet-2.png"
+
 export const products = [
   {
     href: "https://cloakshare.devashish.top",
@@ -170,6 +174,26 @@ export const products = [
         <p>
           The platform provides multiple learning paths, instant quiz feedback, and progress tracking. Built with Next.js and TypeScript, it focuses on performance and a responsive experience across devices.
         </p>
+      </div>
+    ),
+  },
+  {
+    href: "https://kata-sweet.devashish.top",
+    title: "Sweet Shop",
+    description:
+      "A comprehensive sweet shop inventory management system with real-time stock tracking, pricing management, and purchase operations.",
+    thumbnail: kataSweet,
+    images: [sweet1, sweet2],
+    stack: ["React.js", "Node.js", "MongoDB", "Express.js"],
+    slug: "kata-sweet",
+    content: (
+      <div>
+        <p>
+        Sweet Shop is a full-stack inventory management application designed specifically for sweet shops and confectionery businesses. The platform provides an intuitive dashboard that displays key metrics including total sweets in inventory, current stock levels, and total inventory value. Business owners can efficiently manage their sweet collection with features for tracking prices, stock quantities, and product categories like traditional Indian sweets, bakery items, and other confectioneries.{" "}
+        </p>
+        <p>
+        The application features a clean, modern interface with a search functionality to quickly find specific sweets by name, and advanced filtering options to organize products by category, stock status, or price range. Each product card displays essential information including the sweet's name, category, price, and current stock level, with visual indicators showing whether items are in stock. The admin panel allows authorized users to add new products, update pricing, manage stock levels, and process purchases. With real-time inventory updates and automated stock tracking, Sweet Shop helps businesses maintain accurate records, prevent stockouts, and make informed purchasing decisions. The responsive design ensures the system works seamlessly across desktop and mobile devices, making it perfect for both behind-the-counter operations and on-the-go inventory checks.
+        </p>{" "}
       </div>
     ),
   },
