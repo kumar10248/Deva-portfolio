@@ -42,7 +42,7 @@ const EDUCATION = [
     degree: "Bachelor of Engineering in Computer Science",
     institution: "Chandigarh University, India",
     period: "2022 – 2026",
-    grade: "CGPA: 7.75"
+    grade: "CGPA: 7.82/10"
   },
   {
     degree: "Intermediate (BSEB)",
