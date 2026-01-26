@@ -19,7 +19,7 @@ export const socials = [
     icon: IconBrandLinkedin,
   },
   {
-    href: "https://youtube.com/@Kumardevashish10248",
+    href: "https://youtube.com/@DesiCyberLab",
     label: "YouTube",
     icon: IconBrandYoutube,
   },
