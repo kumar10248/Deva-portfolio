@@ -86,12 +86,12 @@ export default function About() {
           </Paragraph>
 
           <Paragraph className="leading-relaxed">
-            I later discovered the world of <strong className="text-purple-600 dark:text-purple-400">blockchain</strong>.
-            Concepts like decentralization and on-chain automation inspired me to build{" "}
-            <strong>Solidity smart contracts</strong> and work on projects such as{" "}
-            <em>DegenToken</em> and <em>Degen Gaming</em>. I also explored{" "}
-            <strong>Avalanche Subnets and HyperSDK</strong>, deepening my understanding of blockchain
-            performance and infrastructure.
+            I later discovered the world of <strong className="text-purple-600 dark:text-purple-400">ethical hacking</strong>.
+            Concepts like vulnerability assessment and penetration testing inspired me to explore{" "}
+            <strong>security auditing, reverse engineering, and exploit development</strong>. I've worked on{" "}
+            <em>CTF challenges</em> and <em>security research projects</em>. I also explored{" "}
+            <strong>network security and web application testing</strong>, deepening my understanding of
+            offensive and defensive cybersecurity techniques.
           </Paragraph>
 
           <Paragraph className="leading-relaxed">
