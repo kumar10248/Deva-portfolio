@@ -7,14 +7,14 @@ import { motion } from "framer-motion";
 export default function About() {
   const images = [
     "/images/developer.png",
-    "/images/blockchain.png",
+    "/images/cyber.png",
     "/images/innovator.png",
     "/images/devops.png",
   ];
 
   const highlights = [
     { icon: "💻", title: "Full-Stack Developer", description: "MERN • Java • REST APIs" },
-    { icon: "⛓️", title: "Blockchain Builder", description: "Solidity • Smart Contracts • EVM" },
+    { icon: "🔒", title: "Cybersecurity Specialist", description: "Security Audits • Penetration Testing • Secure Coding" },
     { icon: "🚀", title: "Startup Co-Founder", description: "Product • Strategy • Innovation" },
     { icon: "☁️", title: "Cloud & DevOps", description: "Docker • Kubernetes • AWS" },
   ];
