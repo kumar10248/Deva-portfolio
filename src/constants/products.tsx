@@ -1,5 +1,7 @@
 import cloakshare from "public/images/cloakshare.png";
 
+import reviewai from "public/images/reviewai.png";
+
 import trunkller from "public/images/trunkller.png";
 
 import attendance from "public/images/attendance.png";
@@ -17,6 +19,26 @@ import sweet1 from "public/images/kata-sweet-1.png"
 import sweet2 from "public/images/kata-sweet-2.png"
 
 export const products = [
+  {
+    href: "https://reviewai.devashish.top",
+    title: "ReviewAI",
+    description:
+      "A GitHub-style code review platform with real-time AI-powered reviews, inline comments, severity ratings, and fix suggestions.",
+    thumbnail: reviewai,
+    images: [reviewai, reviewai],
+    stack: ["Next.js", "Monaco Editor", "OpenAI/Gemini API", "Socket.io", "JWT Auth"],
+    slug: "reviewai",
+    content: (
+      <div>
+        <p>
+        ReviewAI is an intelligent code review platform that brings GitHub-style collaboration to AI-powered code analysis. Users can paste or upload code and receive real-time, token-by-token AI reviews with inline comments, severity ratings, and actionable fix suggestions. The platform combines the power of modern AI models (OpenAI/Gemini) with the user experience developers expect from collaborative tools.{" "}
+        </p>
+        <p>
+        Key features include an inline annotation system for line-level AI comments (similar to GitHub PR reviews), automatic multi-language detection with language-specific rulesets, and a comprehensive review history with diff viewer to track before/after refactors. Users can share reviews via public URLs with customizable expiry times, making it perfect for code sharing and collaboration. Built with Next.js App Router, Monaco Editor for syntax highlighting, Socket.io for real-time streaming, and JWT authentication for secure access, ReviewAI provides a seamless and powerful code review experience that helps developers write better code faster.
+        </p>{" "}
+      </div>
+    ),
+  },
   {
     href: "https://cloakshare.devashish.top",
     title: "cloakshare",
