@@ -23,9 +23,9 @@ const PROJECTS = [
     description: "Architected anonymous file-sharing platform with Google Drive API integration. Scaled system to handle 1,000+ files monthly, reducing server response time by 25%. Developed robust authentication and encryption protocols for data security. Containerized application with Docker for consistent deployment."
   },
   {
-    name: "Blockchain-Based Fundraising Campaign",
-    url: "#",
-    description: "Developed secure Ethereum smart contracts for transparent fundraising. Built responsive React.js dashboard for real-time fund tracking and analytics. Optimized Solidity code resulting in 30% transaction cost reduction. Implemented cryptographic techniques to enhance security."
+    name: "ReviewAI - AI-Powered Code Review Platform",
+    url: "https://reviewai.devashish.top",
+    description: "ReviewAI is an intelligent code review platform that brings GitHub-style collaboration to AI-powered code analysis. Users can paste or upload code and receive real-time, token-by-token AI reviews with inline comments, severity ratings, and actionable fix suggestions. The platform combines the power of modern AI models (OpenAI/Gemini) with the user experience developers expect from collaborative tools."
   }
 ] as const;
 
@@ -161,8 +161,8 @@ export default function ResumePage() {
         >
           {[
             { icon: "💼", label: "Experience", value: "3+ Years" },
-            { icon: "🚀", label: "Projects", value: "15+ Completed" },
-            { icon: "👥", label: "Users Impacted", value: "2500+" },
+            { icon: "🚀", label: "Projects", value: "30+ Completed" },
+            { icon: "👥", label: "Users Impacted", value: "3000+" },
             { icon: "🏆", label: "Achievements", value: "Multiple Awards" },
           ].map((stat, idx) => (
             <div key={idx} className="bg-white dark:bg-gray-800 rounded-xl p-4 shadow-lg hover:shadow-xl transition-shadow">
