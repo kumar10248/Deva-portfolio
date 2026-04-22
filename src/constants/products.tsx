@@ -17,8 +17,31 @@ import jsApp from "public/images/js.png"
 import kataSweet from "public/images/kata-sweet.png"
 import sweet1 from "public/images/kata-sweet-1.png"
 import sweet2 from "public/images/kata-sweet-2.png"
+import collabboard from "public/images/collabboard.png"
 
 export const products = [
+  {
+    href: "https://collabboard.devashish.top",
+    title: "CollabBoard",
+    description:
+      "A real-time collaborative whiteboard application for brainstorming, diagramming, and visual collaboration.",
+    thumbnail:collabboard,
+    images: [collabboard, collabboard],
+    stack: ["React.js", "Socket.io", "Canvas API", "Node.js"],
+    slug: "collabboard",
+    content: (
+      <div>
+        <p>
+        CollabBoard is a real-time collaborative whiteboard application designed to facilitate brainstorming, diagramming, and visual collaboration among teams. The platform allows multiple users to interact simultaneously on a shared canvas, making it ideal for remote teams, educators, and creative professionals. With features like freehand drawing, shape creation, text annotations,  CollabBoard provides a versatile space for visual communication. The application uses Socket.io for real-time updates, ensuring that all participants see changes instantly. Whether you're conducting a virtual meeting, teaching a class, or working on a creative project, CollabBoard offers an intuitive and interactive environment to bring ideas to life collaboratively.
+        </p>
+        <p>
+        Key features include a variety of drawing tools, the ability to create and manipulate shapes, and support for text annotations. Users can also upload images to the canvas, making it easy to incorporate visual elements into their brainstorming sessions. The platform's responsive design ensures that it works seamlessly across different devices, allowing users to collaborate from anywhere. With its focus on real-time interaction and ease of use, CollabBoard is an essential tool for teams looking to enhance their collaborative efforts and foster creativity. AI diagram generation is also in the works, which will allow users to create diagrams from text prompts, further enhancing the collaborative experience.
+        </p>{" "}
+      </div>
+    ),
+        
+  },
+
   {
     href: "https://reviewai.devashish.top",
     title: "ReviewAI",
