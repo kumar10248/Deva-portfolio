@@ -126,8 +126,13 @@ export default function ResumePage() {
                   transition={{ delay: 0.5, duration: 0.5 }}
                   className="text-white/90 text-base md:text-lg max-w-2xl"
                 >
-                  Passionate software engineer specializing in building scalable web applications 
-                  and blockchain solutions with 3+ years of experience.
+                   Focused on backend engineering, real-time systems, and building reliable infrastructure.
+                   <br />
+                 • Built a real-time AI code review platform  
+                  <br />
+                  • Developed a self-healing Linux infrastructure system
+                  <br />
+                  Actively looking for Backend / Full Stack opportunities
                 </motion.p>
               </div>
 
@@ -160,8 +165,8 @@ export default function ResumePage() {
           className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8"
         >
           {[
-            { icon: "💼", label: "Experience", value: "3+ Years" },
-            { icon: "🚀", label: "Projects", value: "30+ Completed" },
+            { icon: "💼", label: "Experience", value: "Multiple Projects" },
+            { icon: "🚀", label: "Projects", value: "10+ Completed" },
             { icon: "👥", label: "Users Impacted", value: "3000+" },
             { icon: "🏆", label: "Achievements", value: "Multiple Awards" },
           ].map((stat, idx) => (
