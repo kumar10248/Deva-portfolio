@@ -30,17 +30,25 @@ export default function Home() {
     </div>
     
     <Heading className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
-      Hello there! I'm Kumar Devasish
+   Backend Developer building real-world systems
     </Heading>
     
-    <Paragraph className="text-xl mb-8 text-gray-700 dark:text-gray-300">
-      I'm a full-stack developer that loves building products and web apps that can impact millions of lives
-    </Paragraph>
+  <Paragraph className="text-xl mb-8 text-gray-700 dark:text-gray-300">
+  Backend developer building scalable systems.
+<br />
+  • Built a real-time AI code review platform  
+<br />
+  • Developed a self-healing Linux infrastructure system
+</Paragraph>
     
-    <Paragraph className="text-lg mb-10 text-gray-600 dark:text-gray-400">
-      A passionate software engineer with 3 years of experience building scalable web apps that are performance optimized and good looking.
-    </Paragraph>
-    
+<Paragraph className="text-lg mb-10 text-gray-600 dark:text-gray-400">
+  Focused on backend engineering, real-time systems, and building reliable infrastructure.
+</Paragraph>
+<Paragraph className="text-lg mb-10 text-gray-600 dark:text-gray-400 font-bold">
+ 🚀 Actively looking for Backend / Full Stack opportunities
+</Paragraph>
+
+      
     <div className="flex flex-wrap gap-4">
       <Link href="/projects" className="px-6 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-medium rounded-lg transition-colors">
         View My Work
@@ -72,7 +80,7 @@ export default function Home() {
           
         </div>
       </div>
-      
+
       {/* Project Section */}
       <div className="py-20 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -85,7 +93,7 @@ export default function Home() {
                 What I've been <Highlight className="text-violet-700">working on</Highlight>
               </Heading>
               <Paragraph className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                Explore some of my recent projects that showcase my skills and passion for building beautiful, functional applications.
+               Real-world systems I’ve built — focused on scalability, performance, and automation.
               </Paragraph>
             </div>
             

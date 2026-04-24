@@ -18,8 +18,10 @@ import kataSweet from "public/images/kata-sweet.png"
 import sweet1 from "public/images/kata-sweet-1.png"
 import sweet2 from "public/images/kata-sweet-2.png"
 import collabboard from "public/images/collabboard.png"
+import linux from "public/images/self_healing.png"
 
 export const products = [
+
   {
     href: "https://collabboard.devashish.top",
     title: "CollabBoard",
@@ -58,6 +60,26 @@ export const products = [
         </p>
         <p>
         Key features include an inline annotation system for line-level AI comments (similar to GitHub PR reviews), automatic multi-language detection with language-specific rulesets, and a comprehensive review history with diff viewer to track before/after refactors. Users can share reviews via public URLs with customizable expiry times, making it perfect for code sharing and collaboration. Built with Next.js App Router, Monaco Editor for syntax highlighting, Socket.io for real-time streaming, and JWT authentication for secure access, ReviewAI provides a seamless and powerful code review experience that helps developers write better code faster.
+        </p>{" "}
+      </div>
+    ),
+  },
+    {
+    href:"https://github.com/kumar10248/Self-Healing-Web-Infrastructure",
+    title: "Self-Healing Infrastructure Platform for Linux Systems",
+    description:
+      "A self-healing infrastructure platform for Linux systems that automatically detects and resolves issues to maintain optimal performance and uptime.",
+    thumbnail: linux,
+    images: [linux, linux],
+    stack: ["Agent", "Linux System Administration", "Bash Scripting", "Monitoring Tools"],
+    slug: "self-healing-infrastructure",
+    content: (
+      <div>
+        <p>
+        The Self-Healing Infrastructure Platform for Linux Systems is an innovative solution designed to enhance the reliability and performance of Linux-based environments. By leveraging advanced monitoring tools and intelligent automation, this platform continuously monitors system health, detects anomalies, and automatically initiates corrective actions to resolve issues without human intervention. The platform's self-healing capabilities ensure that critical services remain operational, minimizing downtime and improving overall system resilience.{" "}
+        </p>
+        <p>
+        Key features include real-time monitoring of system metrics, automated issue detection using predefined rules and machine learning algorithms, and a robust set of self-healing actions such as restarting services, clearing caches, or reallocating resources. The platform also provides comprehensive logging and reporting functionalities, allowing administrators to track system performance and analyze trends over time. With its focus on automation and proactive maintenance, the Self-Healing Infrastructure Platform empowers organizations to maintain optimal performance and uptime in their Linux environments, ultimately enhancing user experience and operational efficiency.
         </p>{" "}
       </div>
     ),
