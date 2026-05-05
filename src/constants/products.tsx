@@ -208,7 +208,7 @@ export const products = [
     ),
   },
   {
-    href: "https://nptel.devashish.top",
+    href: "https://fcwmc.devashish.top",
     title: "NPTEl Question Practice",
     description:
       "A collaborative platform for asking and answering questions, fostering knowledge sharing and community engagement.",
