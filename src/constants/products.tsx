@@ -19,6 +19,8 @@ import sweet1 from "public/images/kata-sweet-1.png"
 import sweet2 from "public/images/kata-sweet-2.png"
 import collabboard from "public/images/collabboard.png"
 import linux from "public/images/self_healing.png"
+import taskforge1 from "public/images/task-forge-1.png"
+import taskforge2 from "public/images/task-forge-2.png"
 
 export const products = [
 
@@ -64,6 +66,27 @@ export const products = [
       </div>
     ),
   },
+  {
+    href:"https://team-task-manager-production-4efc.up.railway.app",
+    title: "Team Task Manager",
+    description:
+      "A collaborative task management application for teams to organize, track, and manage projects with real-time updates and notifications.",
+    thumbnail: taskforge1,
+    images: [taskforge2, taskforge2],
+    stack: ["React.js", "Node.js", "Express.js", "MongoDB", "Socket.io"],
+    slug: "team-task-manager",
+    content: (
+      <div>
+        <p>
+        Team Task Manager is a collaborative task management application designed to help teams organize, track, and manage projects efficiently. The platform provides a user-friendly interface where team members can create tasks, assign them to specific individuals, set deadlines, and track progress in real time. With features like task categorization, priority levels, and status updates, Team Task Manager ensures that everyone stays on the same page and can easily monitor project timelines. The application also includes real-time notifications and updates using Socket.io, allowing team members to stay informed about changes and new assignments as they happen. Whether you're managing a small project or coordinating a large team, Team Task Manager provides the tools you need to keep your projects organized and on track.
+        </p>
+        <p>
+        Key features include a Kanban-style board for visual task management, a calendar view for tracking deadlines, and a robust search and filter system to quickly find tasks. The platform also supports file attachments and comments on tasks, facilitating communication and collaboration among team members. With its responsive design, Team Task Manager can be accessed from any device, making it easy for teams to stay connected and productive regardless of their location.
+        </p>{" "}
+      </div>
+    ),
+  },
+
     {
     href:"https://github.com/kumar10248/Self-Healing-Web-Infrastructure",
     title: "Self-Healing Infrastructure Platform for Linux Systems",
