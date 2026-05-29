@@ -25,7 +25,7 @@ import taskforge2 from "public/images/task-forge-2.png"
 export const products = [
 
   {
-    href: "https://vercel.com/kumar-devashishs-projects/whiteboard-app/BjJJXy5jP2T5NmzHcSfk58KijTdJ",
+    href: "https://whiteboard-app-swart-seven.vercel.app",
     title: "CollabBoard",
     description:
       "A real-time collaborative whiteboard application for brainstorming, diagramming, and visual collaboration.",
@@ -47,7 +47,7 @@ export const products = [
   },
 
   {
-    href: "https://vercel.com/kumar-devashishs-projects/ai-code-reviewer/ANQtPsfJmgo6qXRaCLzBT3kmjNUv",
+    href: "https://ai-code-reviewer-nu-henna.vercel.app",
     title: "ReviewAI",
     description:
       "A GitHub-style code review platform with real-time AI-powered reviews, inline comments, severity ratings, and fix suggestions.",
@@ -108,7 +108,7 @@ export const products = [
     ),
   },
   {
-    href: "https://vercel.com/kumar-devashishs-projects/online-cloak-share/DvC84BLfJ3ByeiWfGGBBwYxv7nk8",
+    href: "https://cloakshare.vercel.app",
     title: "cloakshare",
     description:
       "A secure and temporary clipboard for anonymous text and file sharing with auto-deletion.",
@@ -188,7 +188,7 @@ export const products = [
     ),
   },
   {
-    href: "https://vercel.com/kumar-devashishs-projects/frontendmeal/2Nz6QwGBokgXvhdUMndRgFnQLWmB",
+    href: "https://frontendmeal.vercel.app",
     title: "Cuisine",
     description:
       "A comprehensive recipe discovery platform that helps users find and create delicious meals based on available ingredients or dietary preferences.",
@@ -268,7 +268,7 @@ export const products = [
     ),
   },
   {
-    href: "https://vercel.com/kumar-devashishs-projects/kata-sweet/9MePK7AuoCkn3EAqLD7QDUDtKhsT",
+    href: "https://kata-sweet-kumar-devashishs-projects.vercel.app/login",
     title: "Sweet Shop",
     description:
       "A comprehensive sweet shop inventory management system with real-time stock tracking, pricing management, and purchase operations.",
