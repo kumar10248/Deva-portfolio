@@ -25,7 +25,7 @@ import taskforge2 from "public/images/task-forge-2.png"
 export const products = [
 
   {
-    href: "https://collabboard.devashish.top",
+    href: "https://vercel.com/kumar-devashishs-projects/whiteboard-app/BjJJXy5jP2T5NmzHcSfk58KijTdJ",
     title: "CollabBoard",
     description:
       "A real-time collaborative whiteboard application for brainstorming, diagramming, and visual collaboration.",
@@ -47,7 +47,7 @@ export const products = [
   },
 
   {
-    href: "https://reviewai.devashish.top",
+    href: "https://vercel.com/kumar-devashishs-projects/ai-code-reviewer/ANQtPsfJmgo6qXRaCLzBT3kmjNUv",
     title: "ReviewAI",
     description:
       "A GitHub-style code review platform with real-time AI-powered reviews, inline comments, severity ratings, and fix suggestions.",
@@ -108,7 +108,7 @@ export const products = [
     ),
   },
   {
-    href: "https://cloakshare.devashish.top",
+    href: "https://vercel.com/kumar-devashishs-projects/online-cloak-share/DvC84BLfJ3ByeiWfGGBBwYxv7nk8",
     title: "cloakshare",
     description:
       "A secure and temporary clipboard for anonymous text and file sharing with auto-deletion.",
@@ -148,7 +148,7 @@ export const products = [
     ),
   },
   {
-    href: "https://cse.devashish.top",
+    href: "https://cucse.vercel.app",
     title: "Attendance System",
     description:
       " A digital attendance tracking solution for educational institutions and workplaces with real-time record management.",
@@ -168,7 +168,7 @@ export const products = [
     ),
   },
   {
-    href: "https://plotbot.devashish.top",
+    href: "https://plotbot-api.vercel.app",
     title: "Plotbot",
     description:
       "An AI-driven scriptwriting assistant that generates movie scripts, plot ideas, and character dialogues effortlessly.",
@@ -188,7 +188,7 @@ export const products = [
     ),
   },
   {
-    href: "https://cuisine.devashish.top",
+    href: "https://vercel.com/kumar-devashishs-projects/frontendmeal/2Nz6QwGBokgXvhdUMndRgFnQLWmB",
     title: "Cuisine",
     description:
       "A comprehensive recipe discovery platform that helps users find and create delicious meals based on available ingredients or dietary preferences.",
@@ -208,7 +208,7 @@ export const products = [
     ),
   },
   {
-    href: "https://fcwmc.devashish.top",
+    href: "https://fcwmc.vercel.app",
     title: "NPTEl Question Practice",
     description:
       "A collaborative platform for asking and answering questions, fostering knowledge sharing and community engagement.",
@@ -228,7 +228,7 @@ export const products = [
     ),
   },
   {
-    href: "https://sigma.devashish.top",
+    href: "https://scientific-calculator-two-silk.vercel.app",
     title: "Sigma Calculator",
     description:
       "A powerful scientific calculator with advanced mathematical functions, history tracking, and multiple calculation modes.",
@@ -248,7 +248,7 @@ export const products = [
     ),
   },
   {
-    href: "https://js.devashish.top",
+    href: "https://jsquiz-peach.vercel.app",
     title: "JavaScript Mastery",
     description:
       "An interactive JavaScript learning platform with guided readings, practice quizzes, and progress tracking.",
@@ -268,7 +268,7 @@ export const products = [
     ),
   },
   {
-    href: "https://kata-sweet.devashish.top",
+    href: "https://vercel.com/kumar-devashishs-projects/kata-sweet/9MePK7AuoCkn3EAqLD7QDUDtKhsT",
     title: "Sweet Shop",
     description:
       "A comprehensive sweet shop inventory management system with real-time stock tracking, pricing management, and purchase operations.",
