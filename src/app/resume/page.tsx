@@ -428,7 +428,7 @@ export default function ResumePage() {
             </svg>
           </Link>
           <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
-            Last updated: April 2026 • Available for opportunities
+            Last updated: June 2026 • Available for opportunities
           </p>
         </motion.div>
       </div>
