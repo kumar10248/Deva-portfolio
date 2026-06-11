@@ -317,7 +317,7 @@ export default function ResumePage() {
               <ul className="space-y-4">
                 {[
                   "Scholarship Recipient - Metacrafter (Training with distinction)",
-                  "Certificate of Merit in Blockchain (Solidity, Ethereum)",
+                  "Hack it out Hackathon 2025 - 3rd Place Winner (IIT-BHU)",
                   "Ranked 4th in Aptitude Wizard 2024, Chandigarh University"
                 ].map((achievement, idx) => (
                   <motion.li 
