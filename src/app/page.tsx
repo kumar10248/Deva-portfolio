@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 // app/page.tsx (if using App Router)
 import { Container } from "@/components/Container";
 import { Heading } from "@/components/Heading";
@@ -10,26 +12,47 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-gray-900 dark:to-gray-800 dark:dark-noise">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute inset-0 z-0 opacity-30">
-          <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-blue-400 blur-3xl dark:bg-blue-600" />
-          <div className="absolute bottom-20 right-10 w-72 h-72 rounded-full bg-purple-400 blur-3xl dark:bg-purple-600" />
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.2, 1],
+              x: [0, 50, 0],
+              y: [0, 30, 0],
+            }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-20 left-10 w-64 h-64 rounded-full bg-blue-400 blur-3xl dark:bg-blue-600" 
+          />
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.1, 1],
+              x: [0, -40, 0],
+              y: [0, -50, 0],
+            }}
+            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            className="absolute bottom-20 right-10 w-72 h-72 rounded-full bg-purple-400 blur-3xl dark:bg-purple-600" 
+          />
         </div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-28 pb-16 md:pt-36 md:pb-24">
           
 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
   {/* Left side content */}
-  <div>
-    <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 rounded-full mb-6">
-      <span className="mr-2">👋</span>
-      <span className="text-blue-700 dark:text-blue-300 font-medium">Software Engineer</span>
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+  >
+    <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 rounded-full mb-6 relative overflow-hidden group">
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-400/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+      <span className="mr-2 inline-block animate-bounce">👋</span>
+      <span className="text-blue-700 dark:text-blue-300 font-medium relative z-10">Software Engineer</span>
     </div>
     
-    <Heading className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
+    <Heading className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 leading-tight">
    Backend Developer building real-world systems
     </Heading>
     
@@ -50,22 +73,31 @@ export default function Home() {
 
       
     <div className="flex flex-wrap gap-4">
-      <Link href="/projects" className="px-6 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-medium rounded-lg transition-colors">
+      <Link href="/projects" className="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 dark:from-blue-500 dark:to-blue-600 dark:hover:from-blue-400 dark:hover:to-blue-500 text-white font-medium rounded-lg transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1">
         View My Work
       </Link>
-      <Link href="/contact" className="px-6 py-3 bg-white hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-700 font-medium rounded-lg transition-colors">
+      <Link href="/contact" className="px-6 py-3 bg-white hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 font-medium rounded-lg transition-all shadow-sm hover:shadow-md transform hover:-translate-y-1">
         Get In Touch
       </Link>
     </div>
-  </div>
+  </motion.div>
   
   {/* Right side image - FIXED VERSION */}
-  <div className="relative">
+  <motion.div 
+    initial={{ opacity: 0, scale: 0.8 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+    className="relative"
+  >
     {/* Background decorative overlay */}
-    <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 opacity-20 rounded-2xl" />
+    <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 opacity-20 rounded-2xl blur-lg" />
     
     {/* Image container with proper aspect ratio */}
-    <div className="relative aspect-square w-full max-w-md mx-auto rounded-2xl overflow-hidden shadow-2xl">
+    <motion.div 
+      animate={{ y: [-10, 10, -10] }}
+      transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      className="relative aspect-square w-full max-w-md mx-auto rounded-2xl overflow-hidden shadow-2xl border border-white/20 dark:border-gray-700/50"
+    >
       <Image 
         src="/about_profile.png" 
         alt="Kumar Devasish - Full Stack Developer"
@@ -74,8 +106,8 @@ export default function Home() {
         priority
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />
-    </div>
-  </div>
+    </motion.div>
+  </motion.div>
 </div>
           
         </div>

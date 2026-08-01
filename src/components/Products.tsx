@@ -93,7 +93,7 @@ export const Products = () => {
                     {product.stack?.slice(0, 6).map((stack: string) => (
                       <span
                         key={stack}
-                        className="text-xs font-medium bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-3 py-1.5 rounded-full border border-blue-200 dark:border-blue-800 hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors"
+                        className="text-xs font-medium bg-gradient-to-r from-blue-50/80 to-purple-50/80 dark:from-blue-900/40 dark:to-purple-900/40 text-blue-800 dark:text-blue-200 px-3 py-1.5 rounded-full border border-blue-200/50 dark:border-blue-800/50 shadow-sm backdrop-blur-md hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
                       >
                         {stack}
                       </span>

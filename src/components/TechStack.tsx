@@ -4,6 +4,12 @@ import React from "react";
 import { Heading } from "./Heading";
 import { twMerge } from "tailwind-merge";
 import { motion } from "framer-motion";
+import { 
+  SiJavascript, SiHtml5, SiCss3, SiReact, SiLinux, 
+  SiJenkins, SiGit, SiGithub, SiPostman, SiMysql
+} from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
+import { FaJava, FaDatabase } from "react-icons/fa";
 
 export const TechStack = () => {
   const categories = [
@@ -11,17 +17,17 @@ export const TechStack = () => {
       title: "Programming Languages",
       color: "from-blue-500 to-cyan-500",
       stack: [
-        { title: "JavaScript", icon: "JS", isText: true },
-        { title: "Java", icon: "Java", isText: true },
-        { title: "HTML", icon: "HTML", isText: true },
-        { title: "CSS", icon: "CSS", isText: true },
+        { title: "JavaScript", icon: <SiJavascript className="text-4xl text-yellow-400" /> },
+        { title: "Java", icon: <FaJava className="text-4xl text-orange-500" /> },
+        { title: "HTML", icon: <SiHtml5 className="text-4xl text-orange-600" /> },
+        { title: "CSS", icon: <SiCss3 className="text-4xl text-blue-500" /> },
       ]
     },
     {
       title: "Frameworks & Libraries",
       color: "from-purple-500 to-pink-500",
       stack: [
-        { title: "React", icon: "⚛️", isText: true },
+        { title: "React", icon: <SiReact className="text-4xl text-cyan-400" /> },
         { title: "Next.js", src: "/images/logos/next.png", className: "h-10 w-14" },
       ]
     },
@@ -30,27 +36,27 @@ export const TechStack = () => {
       color: "from-green-500 to-emerald-500",
       stack: [
         { title: "MongoDB", src: "/images/logos/database.png", className: "h-10 w-20" },
-        { title: "SQL", icon: "SQL", isText: true },
-        { title: "NoSQL", icon: "NoSQL", isText: true },
+        { title: "SQL", icon: <SiMysql className="text-4xl text-blue-600" /> },
+        { title: "NoSQL", icon: <FaDatabase className="text-4xl text-emerald-500" /> },
       ]
     },
     {
       title: "Cloud & DevOps",
       color: "from-orange-500 to-red-500",
       stack: [
-        { title: "Linux", icon: "🐧", isText: true },
+        { title: "Linux", icon: <SiLinux className="text-4xl text-gray-800 dark:text-gray-200" /> },
         { title: "AWS", src: "/images/logos/aws.webp", className: "h-10 w-10" },
-        { title: "Jenkins", icon: "Jenkins", isText: true },
+        { title: "Jenkins", icon: <SiJenkins className="text-4xl text-red-500" /> },
       ]
     },
     {
       title: "Tools & Platforms",
       color: "from-pink-500 to-purple-500",
       stack: [
-        { title: "Git", icon: "Git", isText: true },
-        { title: "GitHub", icon: "GitHub", isText: true },
-        { title: "Postman", icon: "📮", isText: true },
-        { title: "VS Code", icon: "VS", isText: true },
+        { title: "Git", icon: <SiGit className="text-4xl text-orange-600" /> },
+        { title: "GitHub", icon: <SiGithub className="text-4xl text-gray-900 dark:text-gray-100" /> },
+        { title: "Postman", icon: <SiPostman className="text-4xl text-orange-500" /> },
+        { title: "VS Code", icon: <VscVscode className="text-4xl text-blue-500" /> },
         { title: "Docker", src: "/images/logos/docker.png", className: "h-10 w-10" },
       ]
     }
@@ -89,8 +95,8 @@ export const TechStack = () => {
                 <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-10 rounded-xl transition-opacity duration-300`} />
                 
                 <div className="relative z-10 flex flex-col items-center justify-center space-y-3">
-                  {item.isText ? (
-                    <div className="text-2xl font-bold text-gray-700 dark:text-gray-300">
+                  {item.icon ? (
+                    <div className="flex items-center justify-center h-14 w-14">
                       {item.icon}
                     </div>
                   ) : (
@@ -99,7 +105,7 @@ export const TechStack = () => {
                       width={200}
                       height={200}
                       alt={item.title}
-                      className={twMerge("object-contain transition-transform duration-300", item.className)}
+                      className={twMerge("object-contain transition-transform duration-300 h-10 w-auto", item.className)}
                     />
                   )}
                   <p className="text-sm font-medium text-gray-700 dark:text-gray-300 text-center">

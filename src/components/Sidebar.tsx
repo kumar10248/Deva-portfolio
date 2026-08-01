@@ -52,7 +52,7 @@ export const Sidebar = () => {
             exit={{ x: -280 }}
             className={twMerge(
               "sidebar-container px-6 z-[100] py-8 w-64 fixed lg:relative h-screen left-0 flex flex-col justify-between transition-all",
-              "bg-white/95 backdrop-blur-sm dark:bg-gray-900/95 border-r border-neutral-200 dark:border-gray-800 shadow-lg"
+              "bg-white/80 backdrop-blur-2xl dark:bg-gray-900/80 border-r border-neutral-200/50 dark:border-gray-800/50 shadow-xl"
             )}
           >
             <div className="flex-1 overflow-auto no-scrollbar">
@@ -93,35 +93,44 @@ export const Navigation = ({
   const isActive = (href: string) => pathname === href;
 
   return (
-    <div className="flex flex-col space-y-1 my-8 relative z-[100]">
-      <div className="mb-4">
-        {navlinks.map((link: Navlink) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            onClick={() => isMobile() && setOpen(false)}
-            className={twMerge(
-              "text-secondary dark:text-gray-300 hover:text-primary dark:hover:text-white transition-all duration-200 flex items-center space-x-3 py-3 px-4 rounded-lg text-sm font-medium group",
-              isActive(link.href) && 
-              "bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 text-blue-600 dark:text-blue-400 font-semibold"
-            )}
-          >
-            <div className={twMerge(
-              "h-8 w-8 rounded-md bg-white dark:bg-gray-800 flex items-center justify-center shadow-sm group-hover:shadow-md transition-all",
-              isActive(link.href) && "bg-blue-500 dark:bg-blue-600"
-            )}>
-              <link.icon
-                className={twMerge(
-                  "h-4 w-4 flex-shrink-0 text-gray-600 dark:text-gray-400 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors",
-                  isActive(link.href) && "text-white dark:text-white"
-                )}
-              />
-            </div>
-            <span className="group-hover:translate-x-1 transition-transform">
-              {link.label}
-            </span>
-          </Link>
-        ))}
+    <div className="flex flex-col space-y-2 my-8 relative z-[100]">
+      <div className="mb-4 space-y-1">
+        {navlinks.map((link: Navlink) => {
+          const active = isActive(link.href);
+          return (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => isMobile() && setOpen(false)}
+              className={twMerge(
+                "relative text-secondary dark:text-gray-300 hover:text-primary dark:hover:text-white transition-all duration-200 flex items-center space-x-3 py-3 px-4 rounded-lg text-sm font-medium group overflow-hidden",
+                active && "text-blue-700 dark:text-blue-300 font-semibold"
+              )}
+            >
+              {active && (
+                <motion.div
+                  layoutId="active-pill"
+                  className="absolute inset-0 bg-blue-100 dark:bg-blue-900/40 rounded-lg -z-10"
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                />
+              )}
+              <div className={twMerge(
+                "h-8 w-8 rounded-md bg-white dark:bg-gray-800 flex items-center justify-center shadow-sm group-hover:shadow-md transition-all relative z-10",
+                active && "bg-blue-600 dark:bg-blue-600 shadow-md ring-2 ring-blue-200 dark:ring-blue-900"
+              )}>
+                <link.icon
+                  className={twMerge(
+                    "h-4 w-4 flex-shrink-0 text-gray-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors",
+                    active && "text-white dark:text-white group-hover:text-white dark:group-hover:text-white"
+                  )}
+                />
+              </div>
+              <span className="group-hover:translate-x-1 transition-transform relative z-10">
+                {link.label}
+              </span>
+            </Link>
+          );
+        })}
       </div>
 
       <div className="relative my-6">
